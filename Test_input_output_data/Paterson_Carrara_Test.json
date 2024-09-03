@@ -1,0 +1,1120 @@
+{
+    "facility": {
+        "address": {
+            "street": "77 Massachusetts Avenue",
+            "building": "Bldg.54-715",
+            "postcode": "02139",
+            "city": "Cambridge",
+            "state": "MA",
+            "country": "USA",
+            "latitude": 42.3601,
+            "longitude": 71.0942
+        },
+        "contact": {
+            "firstname": "Matej",
+            "lastname": "Pec",
+            "affiliation": "Professor",
+            "email": "mpec@mit.edu",
+            "phone": "617-324-7279",
+            "website": "http://mpec.scripts.mit.edu/peclab/",
+            "id": "pec_12345"
+        },
+        "institute": "Massachusetts Institute of Technology",
+        "department": "Earth and Planetary Sciences (EAPS)",
+        "name": "Rock Physics Laboratory",
+        "type": "University Lab",
+        "id": "ETH_54_715",
+        "website": "https://eapsweb.mit.edu/",
+        "description": "Rock Deformation Lab (formerly Prof Brian Evan's Lab)"
+    },
+    "apparatus": {
+        "name": "Paterson Rig #5",
+        "type": "Triaxial (conventional)",
+        "location": "E54-715",
+        "id": "Pat_54_715",
+        "description": "This apparatus is capable of reaching confining pressures up to 500 MPa and temperatures up to 1300\u00cb\u0161C with Argon gas serving as the confining medium. It was designed by Prof. Mervyn Paterson and is one of 13 existing apparatus of this type world-wide. This apparatus is uniquely suited for high-resolution deformation experiments of relatively large samples up to 15 mm in diameter and 30 mm in length thanks to its internal load cell and compensated piston design which eliminates any seal friction from load measurements. The apparatus has a three-zone furnace with temperature gradients of <1 \u00cb\u0161C/mm and a hot-zone ~40 mm in length.  Furthermore, it is equipped with a pore pressure system which allows for permeability measurements during deformation as well as introduction of various fluids into the deforming rocks at high pressures and temperatures. Recently the Paterson Apparatus was upgraded to allow acoustic velocity and acoustic emission (AE) measurements. Currently we are limited to low temperature experiments (<300oC) for AE measurements.",
+        "features": [
+            "Loading",
+            "Unloading",
+            "Heating",
+            "High Temperature",
+            "High Pressure",
+            "HIP",
+            "Synthesis",
+            "Mineral Reactions",
+            "Failure Strength",
+            "Strength",
+            "Creep",
+            "Reactive Flow",
+            "Pore Fluid Control",
+            "Permeability",
+            "Steady-State Permeability",
+            "Transient Permeability",
+            "Drained/Undrained Pore Fluid",
+            "Triaxial Stress/Strain",
+            "True Triaxial",
+            "Acoustic Velocity",
+            "P-Wave Velocity",
+            "S-Wave Velocity"
+        ],
+        "parameters": [
+            {
+                "type": "Confining Pressure",
+                "min": "1",
+                "max": "700",
+                "unit": "MPa",
+                "prefix": "-",
+                "note": ""
+            },
+            {
+                "type": "Temperature",
+                "min": "23",
+                "max": "1250",
+                "unit": "degC",
+                "prefix": "-",
+                "note": ""
+            },
+            {
+                "type": "Pore Pressure",
+                "min": "1",
+                "max": "300",
+                "unit": "MPa",
+                "prefix": "-",
+                "note": ""
+            },
+            {
+                "type": "\u00cf\u01921-Displacement",
+                "min": "20",
+                "max": "49",
+                "unit": "mm",
+                "prefix": "-",
+                "note": ""
+            },
+            {
+                "type": "\u00cf\u01921-Load",
+                "min": "0",
+                "max": "100",
+                "unit": "kN",
+                "prefix": "-",
+                "note": ""
+            },
+            {
+                "type": "Stiffness",
+                "min": "75.19",
+                "max": "75.19",
+                "unit": "kN\u00c2\u00b7mm-1",
+                "prefix": "-",
+                "note": ""
+            }
+        ],
+        "documents": []
+    },
+    "daq": {
+        "name": "Standard",
+        "type": "Standard",
+        "location": "E54-715",
+        "description": "This is the standard DAQ configuration",
+        "devices": [
+            {
+                "name": "National Instrument PCI-MIO-16XE-10",
+                "description": "This is a modified DAQ System (originally by Dave Mainprice)",
+                "channels": [
+                    {
+                        "header": {
+                            "type": "Load",
+                            "spec_a": "Axial",
+                            "spec_b": "Sample",
+                            "spec_c": "",
+                            "unit": "KN"
+                        },
+                        "number": "0",
+                        "type": "Analog Input",
+                        "configuration": "Differential",
+                        "note": "Internal Axial Load",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "detail": "Capacitive Load Cell",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "kN",
+                            "excitation": "10",
+                            "date": "2011-06-26T12:00",
+                            "note": "100kN max",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "0.10473398"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Displacement",
+                            "spec_a": "Axial",
+                            "spec_b": "External",
+                            "spec_c": "High Gain",
+                            "unit": "mm"
+                        },
+                        "type": "Analog Input",
+                        "number": "1",
+                        "note": "High Gain External LVDT",
+                        "configuration": "Differential",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1KHz",
+                        "filter": "",
+                        "gain": "x10",
+                        "sensor": {
+                            "template": "LVDT/RVDT Sensors",
+                            "detail": "LVDT",
+                            "type": "Active",
+                            "id": "",
+                            "model": "7DCDT-50",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "mm",
+                            "excitation": "10",
+                            "date": "2011-06-26T12:00",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "-8.60585"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Displacement",
+                            "spec_a": "Axial",
+                            "spec_b": "External",
+                            "spec_c": "Low Gain",
+                            "unit": "mm"
+                        },
+                        "type": "Analog Input",
+                        "number": "2",
+                        "note": "",
+                        "configuration": "Differential",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "low Gain",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "LVDT/RVDT Sensors",
+                            "detail": "LVDT",
+                            "type": "Active",
+                            "id": "",
+                            "model": "24DCDT-50",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "mm",
+                            "excitation": "10",
+                            "date": "2011-06-26T12:00",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "-0.408998"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Displacement",
+                            "spec_a": "Total",
+                            "spec_b": "Pore Pressure Intensifier",
+                            "spec_c": "Upstream",
+                            "unit": "mm"
+                        },
+                        "type": "Analog Input",
+                        "number": "3",
+                        "note": "",
+                        "configuration": "Differential",
+                        "resolution": "",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "LVDT/RVDT Sensors",
+                            "detail": "LVDT",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "mm",
+                            "excitation": "10",
+                            "date": "2011-06-22T12:00",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "-0.408998"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Pressure",
+                            "spec_a": "Pore",
+                            "spec_b": "Upstream",
+                            "spec_c": "",
+                            "unit": "MPa"
+                        },
+                        "type": "Analog Input",
+                        "number": "4",
+                        "note": "",
+                        "configuration": "Differential",
+                        "resolution": "",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "Bridge Sensors",
+                            "detail": "Pressure Transducer",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "MPa",
+                            "excitation": "10",
+                            "date": "",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "0.02087683"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Pressure",
+                            "spec_a": "Pore",
+                            "spec_b": "Downstream",
+                            "spec_c": "",
+                            "unit": "MPa"
+                        },
+                        "type": "Analog Input",
+                        "number": "5",
+                        "note": "",
+                        "configuration": "Differential",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "Bridge Sensors",
+                            "detail": "Pressure Transducer",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "MPa",
+                            "excitation": "10",
+                            "date": "",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "0.01985703"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Load",
+                            "spec_a": "Axial",
+                            "spec_b": "External",
+                            "spec_c": "",
+                            "unit": "KN"
+                        },
+                        "type": "Analog Input",
+                        "number": "6",
+                        "note": "",
+                        "configuration": "Referenced Single Ended",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "Bridge Sensors",
+                            "detail": "Load Cell",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "kN",
+                            "excitation": "10",
+                            "date": "",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "0.10140959"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Pressure",
+                            "spec_a": "Confining",
+                            "spec_b": "Vessel",
+                            "spec_c": "",
+                            "unit": "MPa"
+                        },
+                        "type": "Analog Input",
+                        "number": "7",
+                        "note": "",
+                        "configuration": "Differential",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "Bridge Sensors",
+                            "detail": "Pressure Transducer",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "MPa",
+                            "excitation": "10",
+                            "date": "",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "0",
+                                    "b": "0.01444043"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Temperature",
+                            "spec_a": "Sample",
+                            "spec_b": "Top",
+                            "spec_c": "",
+                            "unit": "deg C"
+                        },
+                        "type": "Analog Input",
+                        "number": "14",
+                        "note": "",
+                        "configuration": "Differential",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "1",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "Thermocouple",
+                            "detail": "Thermocouple",
+                            "type": "Passive",
+                            "id": "Shielded, non-referenced TC",
+                            "model": "Type K",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "template": "Input@0:Input/Unit",
+                            "input": "degC",
+                            "unit": "degC",
+                            "excitation": "0",
+                            "date": "",
+                            "note": "",
+                            "data": [
+                                {
+                                    "a": "-0.09465",
+                                    "b": "0.00411523"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "",
+                            "spec_a": "Velocity",
+                            "spec_b": "RAM Displacement",
+                            "spec_c": "",
+                            "unit": "m/s"
+                        },
+                        "type": "Analog Output",
+                        "number": "0",
+                        "note": "",
+                        "configuration": "Referenced Single Ended",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "excitation": "0",
+                            "date": "",
+                            "note": "",
+                            "data": []
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Displacement",
+                            "spec_a": "Volumetric",
+                            "spec_b": "Pore Pressure Intensifier",
+                            "spec_c": "",
+                            "unit": "mm"
+                        },
+                        "type": "Analog Output",
+                        "number": "1",
+                        "note": "",
+                        "configuration": "Referenced Single Ended",
+                        "resolution": "16",
+                        "range_low": "0",
+                        "range_high": "10",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "detail": "LVDT",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "excitation": "0",
+                            "date": "",
+                            "note": "",
+                            "data": []
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "",
+                            "spec_a": "Confining Pressure",
+                            "spec_b": "External",
+                            "spec_c": "",
+                            "unit": "second"
+                        },
+                        "type": "Digital Output",
+                        "number": "0",
+                        "note": "Haskel Gas Pump Trigger",
+                        "configuration": "Line",
+                        "resolution": "8",
+                        "range_low": "0",
+                        "range_high": "1",
+                        "rate": "1kHz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "template": "Accelerometer & Force",
+                            "detail": "LVDT",
+                            "type": "Active",
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "excitation": "0",
+                            "date": "",
+                            "note": "",
+                            "data": []
+                        }
+                    },
+                    {
+                        "header": {
+                            "type": "Time",
+                            "spec_a": "Relative",
+                            "spec_b": "Differential",
+                            "spec_c": "",
+                            "unit": "sec"
+                        },
+                        "type": "System Data",
+                        "number": "0",
+                        "note": "Internal DAQ Clock",
+                        "configuration": "Parallel",
+                        "resolution": "16",
+                        "range_low": "",
+                        "range_high": "",
+                        "rate": "5Hz",
+                        "filter": "",
+                        "gain": "x1",
+                        "sensor": {
+                            "id": "",
+                            "model": "",
+                            "version": "",
+                            "number": "",
+                            "serial": ""
+                        },
+                        "calibration": {
+                            "excitation": "0",
+                            "date": "",
+                            "note": "",
+                            "data": []
+                        }
+                    }
+                ],
+                "documents": []
+            }
+        ]
+    },
+    "sample": {
+        "name": "Carr#1",
+        "igsn": "",
+        "id": "Carr#1_1234",
+        "description": "Another Carrara Marble sample",
+        "parent": {
+            "name": "Block 1234",
+            "igsn": "",
+            "id": "Carr1234",
+            "description": "Core#1234",
+            "parent": null
+        },
+        "material": {
+            "material": {
+                "type": "standards",
+                "name": "Carrara Marble",
+                "state": "Homogeneous",
+                "note": ""
+            },
+            "composition": [
+                {
+                    "mineral": "Other",
+                    "fraction": 0.99,
+                    "unit": "Vol%",
+                    "grainsize": 150
+                }
+            ],
+            "provenance": {
+                "formation": "Carrara (Italy)",
+                "member": "",
+                "submember": "",
+                "source": "Quarry",
+                "location": {
+                    "street": "",
+                    "postcode": "",
+                    "city": "",
+                    "state": "Lombardia",
+                    "country": "Italia",
+                    "latitude": 0,
+                    "longitude": 0
+                }
+            },
+            "texture": {
+                "bedding": "",
+                "lineation": "",
+                "foliation": "",
+                "fault": ""
+            }
+        },
+        "parameters": [
+            {
+                "control": "Weight",
+                "value": "23.7",
+                "unit": "g",
+                "prefix": "-",
+                "note": ""
+            },
+            {
+                "control": "Density",
+                "value": "2.3",
+                "unit": "cc",
+                "prefix": "-",
+                "note": ""
+            },
+            {
+                "control": "Humidity",
+                "value": "",
+                "unit": "%",
+                "prefix": "-",
+                "note": "as is"
+            },
+            {
+                "control": "Fluid Saturation",
+                "value": "",
+                "unit": "%",
+                "prefix": "-",
+                "note": "dry"
+            }
+        ],
+        "documents": []
+    },
+    "experiment": {
+        "title": "Carrara Deformation Test",
+        "project": "Yield Point Study Carrara",
+        "id": "12345",
+        "ieda": "",
+        "start_date": "2022-11-22T13:00",
+        "end_date": "2022-11-22T15:00",
+        "description": "Just another Carrara Marble Test",
+        "features": [
+            "Loading",
+            "Unloading",
+            "Heating",
+            "Cooling",
+            "High Pressure",
+            "Elastic Moduli",
+            "Yield Strength",
+            "Strength",
+            "Permeability",
+            "Drained/Undrained Pore Fluid",
+            "Triaxial Stress/Strain",
+            "Differential Stress",
+            "Acoustic Velocity",
+            "Acoustic Events",
+            "P-Wave Velocity"
+        ],
+        "author": {
+            "firstname": "Ulrich",
+            "lastname": "Mok",
+            "affiliation": "Lab Manager",
+            "email": "u_mok@mit.edu",
+            "phone": "6175154745",
+            "website": "",
+            "id": "user_id"
+        },
+        "geometry": [
+            {
+                "order": "1",
+                "type": "Sample",
+                "geometry": "Cylinder",
+                "material": "Sample",
+                "dimensions": [
+                    {
+                        "variable": "Length",
+                        "value": 20,
+                        "unit": "mm",
+                        "prefix": "-",
+                        "note": ""
+                    },
+                    {
+                        "variable": "Diameter",
+                        "value": 10,
+                        "unit": "mm",
+                        "prefix": "-",
+                        "note": ""
+                    }
+                ]
+            },
+            {
+                "order": "2",
+                "type": "Jacket",
+                "geometry": "Tube",
+                "material": "Copper",
+                "dimensions": [
+                    {
+                        "variable": "Length",
+                        "value": 210,
+                        "unit": "mm",
+                        "prefix": "-",
+                        "note": ""
+                    },
+                    {
+                        "variable": "Wall Thickness",
+                        "value": 0.1,
+                        "unit": "mm",
+                        "prefix": "-",
+                        "note": ""
+                    }
+                ]
+            }
+        ],
+        "protocol": [
+            {
+                "description": "",
+                "test": "Loading",
+                "objective": "Initial pressurizing",
+                "parameters": [
+                    {
+                        "control": "Confining Pressure Pc",
+                        "value": 10,
+                        "unit": "MPa",
+                        "note": ""
+                    },
+                    {
+                        "control": "Temperature T",
+                        "value": 23,
+                        "unit": "degC",
+                        "note": ""
+                    }
+                ]
+            },
+            {
+                "description": "",
+                "test": "Heating",
+                "objective": "",
+                "parameters": [
+                    {
+                        "control": "Temperature T",
+                        "value": 100,
+                        "unit": "degC",
+                        "note": ""
+                    }
+                ]
+            },
+            {
+                "description": "Constant Strain Rate",
+                "test": "Yield Strength",
+                "objective": "",
+                "parameters": [
+                    {
+                        "control": "Strain Rate \u00ce\u00b53/dt",
+                        "value": 0.01,
+                        "unit": "milistrain",
+                        "note": ""
+                    }
+                ]
+            },
+            {
+                "description": "Shut down",
+                "test": "Cooling",
+                "objective": "",
+                "parameters": [
+                    {
+                        "control": "Temperature T",
+                        "value": 23,
+                        "unit": "degC",
+                        "note": ""
+                    }
+                ]
+            },
+            {
+                "description": "Shut Down",
+                "test": "Unloading",
+                "objective": "",
+                "parameters": [
+                    {
+                        "control": "Stress \u00cf\u01923",
+                        "value": 0,
+                        "unit": "MPa",
+                        "note": ""
+                    }
+                ]
+            }
+        ],
+        "documents": []
+    },
+    "data": {
+        "keys": {
+            "facility": "ETH_54_715",
+            "apparatus": "Pat_54_715",
+            "sample": "Carr#1_1234",
+            "user": "user_id",
+            "experiment": "12345"
+        },
+        "datasets": [
+            {
+                "data": "Time_Series",
+                "index": "1",
+                "type": "Data",
+                "source": "",
+                "format": "text",
+                "id": "",
+                "path": "TimeSeriesData/Paterson#5_ExampleData.txt",
+                "rating": "Very Good",
+                "description": "Paterson Data File",
+                "headers": [
+                    {
+                        "header": {
+                            "type": "Time",
+                            "spec_a": "Relative",
+                            "spec_b": "Differential",
+                            "spec_c": "",
+                            "unit": "hour"
+                        },
+                        "type": "System Clock",
+                        "number": "0",
+                        "note": "",
+                        "rating": "Exceptional"
+                    },
+                    {
+                        "header": {
+                            "type": "Time",
+                            "spec_a": "Relative",
+                            "spec_b": "Differential",
+                            "spec_c": "",
+                            "unit": "sec"
+                        },
+                        "type": "System Clock",
+                        "number": "1",
+                        "note": "",
+                        "rating": "Exceptional"
+                    },
+                    {
+                        "header": {
+                            "type": "Load",
+                            "spec_a": "Axial",
+                            "spec_b": "Internal",
+                            "spec_c": "",
+                            "unit": "KN"
+                        },
+                        "type": "Analog Input",
+                        "number": "2",
+                        "note": "",
+                        "rating": "Very Good"
+                    },
+                    {
+                        "header": {
+                            "type": "Displacement",
+                            "spec_a": "Axial",
+                            "spec_b": "External",
+                            "spec_c": "High Gain (Fine)",
+                            "unit": "mm"
+                        },
+                        "type": "Analog Input",
+                        "number": "3",
+                        "note": "",
+                        "rating": "Very Good"
+                    },
+                    {
+                        "header": {
+                            "type": "Displacement",
+                            "spec_a": "Axial",
+                            "spec_b": "External",
+                            "spec_c": "Low Gain (Coarse)",
+                            "unit": "mm"
+                        },
+                        "type": "Analog Input",
+                        "number": "4",
+                        "note": "",
+                        "rating": "Good"
+                    },
+                    {
+                        "header": {
+                            "type": "Displacement",
+                            "spec_a": "Volumetric",
+                            "spec_b": "Pore Volume",
+                            "spec_c": "",
+                            "unit": "mm"
+                        },
+                        "type": "Analog Input",
+                        "number": "5",
+                        "note": "",
+                        "rating": "Good"
+                    },
+                    {
+                        "header": {
+                            "type": "Pressure",
+                            "spec_a": "Pore",
+                            "spec_b": "Upstream",
+                            "spec_c": "",
+                            "unit": "MPa"
+                        },
+                        "type": "Analog Input",
+                        "number": "6",
+                        "note": "",
+                        "rating": "Good"
+                    },
+                    {
+                        "header": {
+                            "type": "Pressure",
+                            "spec_a": "Pore",
+                            "spec_b": "Downstream",
+                            "spec_c": "",
+                            "unit": "bar"
+                        },
+                        "type": "Analog Input",
+                        "number": "7",
+                        "note": "",
+                        "rating": "Good"
+                    },
+                    {
+                        "header": {
+                            "type": "Load",
+                            "spec_a": "Axial",
+                            "spec_b": "External",
+                            "spec_c": "",
+                            "unit": "KN"
+                        },
+                        "type": "Analog Input",
+                        "number": "8",
+                        "note": "",
+                        "rating": "Acceptable"
+                    },
+                    {
+                        "header": {
+                            "type": "Pressure",
+                            "spec_a": "Confining",
+                            "spec_b": "Vessel",
+                            "spec_c": "",
+                            "unit": "MPa"
+                        },
+                        "type": "Analog Input",
+                        "number": "9",
+                        "note": "",
+                        "rating": "Very Good"
+                    },
+                    {
+                        "header": {
+                            "type": "Temperature",
+                            "spec_a": "Sample",
+                            "spec_b": "Average",
+                            "spec_c": "",
+                            "unit": "deg C"
+                        },
+                        "type": "Analog Input",
+                        "number": "10",
+                        "note": "",
+                        "rating": "Very Good"
+                    }
+                ]
+            },
+            {
+                "data": "Parameters",
+                "index": "1",
+                "type": "Other",
+                "source": "",
+                "format": "text",
+                "id": "",
+                "path": "",
+                "rating": "Very Good",
+                "description": "Post Experimental measurements",
+                "parameters": [
+                    {
+                        "control": "Final Strain \u00ce\u00b5",
+                        "value": "5",
+                        "error": "",
+                        "unit": "%",
+                        "prefix": "-",
+                        "note": ""
+                    },
+                    {
+                        "control": "Length",
+                        "value": "19.2",
+                        "error": "",
+                        "unit": "mm",
+                        "prefix": "-",
+                        "note": ""
+                    },
+                    {
+                        "control": "Diameter",
+                        "value": "20.3",
+                        "error": "",
+                        "unit": "mm",
+                        "prefix": "-",
+                        "note": ""
+                    }
+                ]
+            },
+            {
+                "data": "Imaging",
+                "index": "1",
+                "type": "Picture",
+                "source": "",
+                "format": "text",
+                "id": "",
+                "path": "Images/Carr#7_3",
+                "rating": "Very Good",
+                "description": "Post Experiment Image"
+            },
+            {
+                "data": "Thin_Section",
+                "index": "1",
+                "type": "Picture",
+                "source": "",
+                "format": "text",
+                "id": "",
+                "path": "",
+                "rating": "Low",
+                "description": ""
+            },
+            {
+                "data": "EBSD",
+                "index": "1",
+                "type": "Picture",
+                "source": "",
+                "format": "text",
+                "id": "",
+                "path": "",
+                "rating": "Low",
+                "description": ""
+            }
+        ]
+    }
+}
