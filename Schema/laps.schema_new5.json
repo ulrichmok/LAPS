@@ -1,0 +1,1788 @@
+{
+    "type": "object",
+    "title": "",
+    "format": "categories",
+    "options": {
+        "disable_collapse": true,
+        "disable_edit_json": false,
+        "disable_properties": true,
+        "compact": true
+    },
+    "properties": {
+        "facility": {
+            "title": "Facility",
+            "$ref": "files/definitions.schema.json#/definitions/facility",
+            "propertyOrder": 0,
+            "options": {
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true
+            },
+            "properties": {
+                "header": {
+                    "title": "<h3><strong>Facility Form</h3></strong>",
+                    "type": "info",
+                    "propertyOrder": 0,
+                    "description": "<ul>Facility Information and Contact)</ul>"
+                },
+                "address": {
+                    "title": "Address",
+                    "description": "Facility Address",
+                    "$ref": "files/definitions.schema.json#/definitions/location",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true
+                    }
+                },
+                "contact": {
+                    "title": "Contact",
+                    "description": "Facility Contact Information",
+                    "$ref": "files/definitions.schema.json#/definitions/contact",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true
+                    }
+                }
+            }
+        },
+        "apparatus": {
+            "type": "object",
+            "title": "Apparatus",
+            "propertyOrder": 1,
+            "options": {
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true
+            },
+            "format": "grid-strict",
+            "properties": {
+                "header": {
+                    "title": "<h3><strong>Apparatus Form</h3></strong>",
+                    "type": "info",
+                    "propertyOrder": 0,
+                    "description": "<ul>Apparatus (DUT) Information (Description, Features, Parameter, Manuals and Documents)</ul>"
+                },
+                "name": {
+                    "type": "string",
+                    "title": "Apparatus Name",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "title": "Apparatus Type",
+                    "format": "choice",
+                    "options": {
+                        "grid_columns": 4
+                    },
+                    "enum": [
+                        "",
+                        "Uniaxial",
+                        "Triaxial (conventional)",
+                        "Biaxial",
+                        "True Triaxial",
+                        "Direct Shear",
+                        "Shear Box",
+                        "Rotary Shear Friction Apparatus",
+                        "Creep Cell",
+                        "Indentation Cell",
+                        "Piston Cylinder",
+                        "Multi Anvil",
+                        "D-DIA",
+                        "Rotational Drickamer Apparatus (RDA)",
+                        "Large Volume Torsion Apparatus (LVT)",
+                        "1 Atm Gas Mixing Furnace",
+                        "Vacuum Furnace",
+                        "Other Gas Medium Apparatus",
+                        "Other Solid Medium Apparatus",
+                        "Other Liquid Medium Apparatus",
+                        "Vickers Hardness Tester",
+                        "Nanoindenter",
+                        "Diamond Anvil Cell",
+                        "Brazilian Test",
+                        "Paterson Apparatus",
+                        "Heard Apparatus",
+                        "Griggs Apparatus",
+                        "Schmidt Hammer",
+                        "Split Hopkinson Pressure Bar",
+                        "Double Torsion apparatus",
+                        "Point Load",
+                        "Atomic Force Microscope",
+                        "Rheometer",
+                        "Permeameter",
+                        "Pycnometer",
+                        "Viscosimeter",
+                        "Laser Profilometer",
+                        "Light Interferometer",
+                        "Load Stamp",
+                        "Chevron Notch Test",
+                        "Paris-Edinburgh Rig",
+                        "NER Rig",
+                        "Sanchez Rig",
+                        "Micro-Deformation Cell",
+                        "Ancillary Equipment",
+                        "Commercial Apparatus",
+                        "Other Apparatus"
+                    ]
+                },
+                "location": {
+                    "type": "string",
+                    "title": "Location",
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "id": {
+                    "title": "Apparatus ID",
+                    "type": "string",
+                    "options": {
+                        "grid_columns": 2,
+                        "grid_break": true
+                    }
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "format": "markdown",
+                    "options": {
+                        "grid_columns": 12,
+                        "grid_break": true
+                    }
+                },
+                "features": {
+                    "$ref": "files/definitions.schema.json#/definitions/features",
+                    "title": "<u>Apparatus Features:</u>",
+                    "description": "Select Apparatus Test Capabilities",
+                    "options": {
+                        "collapsed": true,
+                        "hidden": false,
+                        "grid_columns": 12
+                    }
+                },
+                "parameters": {
+                    "type": "array",
+                    "format": "table",
+                    "title": "Parameters",
+                    "description": "System Parameters and Limits",
+                    "options": {
+                        "collapsed": true
+                    },
+                    "items": {
+                        "title": "Parameter",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "title": "Name",
+                                "propertyOrder": 0,
+                                "enum": [
+                                    "Confining Pressure",
+                                    "Effective Pressure",
+                                    "Pore Pressure",
+                                    "Temperature",
+                                    "σ1-Displacement",
+                                    "σ2-Displacement",
+                                    "σ3-Displacement",
+                                    "σ1-Load",
+                                    "σ2-Load",
+                                    "σ3-Load",
+                                    "Displacement Rate",
+                                    "Loading Rate",
+                                    "Stiffness",
+                                    "Sample Diameter",
+                                    "Sample Length",
+                                    "Permeability"
+                                ],
+                                "options": {
+                                    "grid_columns": 3
+                                },
+                                "default": ""
+                            },
+                            "min": {
+                                "title": "Minimum",
+                                "type": "string",
+                                "options": {
+                                    "grid_columns": 2
+                                }
+                            },
+                            "max": {
+                                "title": "Maximum",
+                                "type": "string",
+                                "options": {
+                                    "grid_columns": 2
+                                }
+                            },
+                            "unit": {
+                                "$ref": "files/definitions.schema.json#/definitions/unit",
+                                "title": "Unit",
+                                "default": ""
+                            },
+                            "prefix": {
+                                "$ref": "files/definitions.schema.json#/definitions/prefix",
+                                "title": "Prefix",
+                                "default": "-"
+                            },
+                            "note": {
+                                "type": "string",
+                                "title": "Detail/Note"
+                            }
+                        }
+                    }
+                },
+                "documents": {
+                    "$ref": "files/definitions.schema.json#/definitions/documents"
+                }
+            }
+        },
+        "daq": {
+            "type": "object",
+            "title": "DAQ",
+            "propertyOrder": 2,
+            "options": {
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true
+            },
+            "properties": {
+                "header": {
+                    "title": "<h3><strong>DAQ Form</h3></strong>",
+                    "type": "info",
+                    "propertyOrder": 0,
+                    "description": "<ul>Digital Acquisition (DAQ) Information; Input/Output Channels (Names, Configuration, Sensors, Calibrations)</ul>"
+                },
+                "name": {
+                    "type": "string",
+                    "title": "DAQ Group Name",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "title": "DAQ Type",
+                    "format": "choice",
+                    "options": {
+                        "grid_columns": 4
+                    },
+                    "enum": [
+                        "Standard",
+                        "Conventional",
+                        "Proprietary"
+                    ]
+                },
+                "location": {
+                    "type": "string",
+                    "title": "Location",
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "format": "markdown",
+                    "options": {
+                        "grid_columns": 12,
+                        "grid_break": true
+                    }
+                },
+                "devices": {
+                    "title": "DAQ Devices",
+                    "type": "array",
+                    "format": "grid-strict",
+                    "description": "List of Data Acquisition Devices",
+                    "options": {
+                        "collapsed": false,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true,
+                        "grid_columns": 12
+                    },
+                    "items": {
+                        "type": "object",
+                        "title": "Device Name",
+                        "headerTemplate": "{{self.name}}",
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "grid_columns": 12
+                        },
+                        "properties": {
+                            "name": {
+                                "title": "DAQ Device",
+                                "type": "string",
+                                "propertyOrder": 0,
+                                "default": "System Default"
+                            },
+                            "description": {
+                                "title": "Description",
+                                "type": "string",
+                                "propertyOrder": 1
+                            },
+                            "channels": {
+                                "title": "Channels",
+                                "description": "DAQ Channels - Sensors - Calibration",
+                                "type": "array",
+                                "format": "tabs",
+                                "options": {
+                                    "collapsed": false,
+                                    "disable_collapse": false,
+                                    "disable_edit_json": true,
+                                    "disable_properties": true,
+                                    "grid_columns": 12
+                                },
+                                "items": {
+                                    "title": "Channel",
+                                    "headerTemplate": "{{self.number}} {{self.header.spec_a}} {{self.header.type}}",
+                                    "format": "grid-strict",
+                                    "multiple": true,
+                                    "required": [],
+                                    "options": {
+                                        "disable_collapse": true,
+                                        "disable_edit_json": true,
+                                        "disable_properties": true,
+                                        "grid_columns": 12
+                                    },
+                                    "properties": {
+                                        "header": {
+                                            "title": "Header",
+                                            "$ref": "files/definitions.schema.json#/definitions/header",
+                                            "propertyOrder": 0,
+                                            "options": {
+                                                "disable_collapse": true,
+                                                "disable_edit_json": true,
+                                                "disable_properties": true,
+                                                "keep_oneof_values": false
+                                            }
+                                        },
+                                        "divider": {
+                                            "type": "info",
+                                            "title": "<h4>Information</h4>",
+                                            "propertyOrder": 1
+                                        },
+                                        "number": {
+                                            "type": "string",
+                                            "title": "#",
+                                            "propertyOrder": 2,
+                                            "enum": [
+                                                "0",
+                                                "1",
+                                                "2",
+                                                "3",
+                                                "4",
+                                                "5",
+                                                "6",
+                                                "7",
+                                                "8",
+                                                "9",
+                                                "10",
+                                                "11",
+                                                "12",
+                                                "13",
+                                                "14",
+                                                "15",
+                                                "16",
+                                                "17",
+                                                "18",
+                                                "19",
+                                                "20",
+                                                "21",
+                                                "22",
+                                                "23",
+                                                "24",
+                                                "25",
+                                                "26",
+                                                "27",
+                                                "28",
+                                                "29",
+                                                "30",
+                                                "31",
+                                                "32"
+                                            ],
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "title": "Type",
+                                            "enum": [
+                                                "Calculated",
+                                                "Analog Input",
+                                                "Analog Output",
+                                                "Digital Input",
+                                                "Digital Output",
+                                                "System Data",
+                                                "System Clock"
+                                            ],
+                                            "propertyOrder": 3,
+                                            "options": {
+                                                "grid_columns": 3
+                                            }
+                                        },
+                                        "configuration": {
+                                            "type": "string",
+                                            "title": "Configuration",
+                                            "enum": [
+                                                "System",
+                                                "Differential",
+                                                "Single Ended",
+                                                "Referenced Single Ended",
+                                                "Serial",
+                                                "Parallel",
+                                                "Single",
+                                                "Line"
+                                            ],
+                                            "propertyOrder": 4,
+                                            "options": {
+                                                "grid_columns": 3
+                                            }
+                                        },
+                                        "note": {
+                                            "type": "string",
+                                            "title": "Note",
+                                            "propertyOrder": 5,
+                                            "options": {
+                                                "grid_columns": 4,
+                                                "grid_break": true
+                                            }
+                                        },
+                                        "resolution": {
+                                            "title": "Res [bit]",
+                                            "type": "string",
+                                            "propertyOrder": 6,
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "range_low": {
+                                            "type": "string",
+                                            "title": "Min",
+                                            "propertyOrder": 8,
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "range_high": {
+                                            "type": "string",
+                                            "propertyOrder": 9,
+                                            "title": "Max",
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "rate": {
+                                            "type": "string",
+                                            "title": "Rate",
+                                            "propertyOrder": 10,
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "filter": {
+                                            "type": "string",
+                                            "title": "Filter",
+                                            "propertyOrder": 11,
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "gain": {
+                                            "type": "string",
+                                            "title": "Gain",
+                                            "enum": [
+                                                "x1",
+                                                "x2",
+                                                "x5",
+                                                "x10",
+                                                "x20",
+                                                "x25",
+                                                "x50",
+                                                "x100"
+                                            ],
+                                            "propertyOrder": 12,
+                                            "options": {
+                                                "grid_columns": 2,
+                                                "grid_break": true
+                                            }
+                                        },
+                                        "sensor": {
+                                            "title": "Sensor/Actuator",
+                                            "$ref": "files/definitions.schema.json#/definitions/sensor",
+                                            "propertyOrder": 13,
+                                            "options": {
+                                                "collapsed": true,
+                                                "disable_collapse": false,
+                                                "disable_edit_json": true,
+                                                "disable_properties": true,
+                                                "grid_columns": 12
+                                            }
+                                        },
+                                        "calibration": {
+                                            "title": "Calibration",
+                                            "$ref": "files/definitions.schema.json#/definitions/calibration",
+                                            "propertyOrder": 14,
+                                            "options": {
+                                                "collapsed": true,
+                                                "disable_collapse": false,
+                                                "disable_edit_json": true,
+                                                "disable_properties": true,
+                                                "grid_columns": 12
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "documents": {
+                                "$ref": "files/definitions.schema.json#/definitions/documents"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "sample": {
+            "title": "Sample",
+            "$ref": "files/definitions.schema.json#/definitions/sample",
+            "propertyOrder": 3,
+            "options": {
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true
+            },
+            "properties": {
+                "header": {
+                    "title": "<h3><strong>Sample Form</strong></h3>",
+                    "type": "info",
+                    "description": "<ul>Name and Description; Material (Lithology, Provenance, Mineralogy); Properties and Treatment</ul>",
+                    "propertyOrder": 0
+                },
+                "material": {
+                    "title": "Material",
+                    "description": "Composition, Mineralogy and Provenance",
+                    "format": "grid-strict",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true,
+                        "grid_columns": 12
+                    },
+                    "properties": {
+                        "material": {
+                            "title": "Material Type",
+                            "$ref": "files/definitions.schema.json#/definitions/material",
+                            "propertyOrder": 0,
+                            "options": {
+                                "compact": true,
+                                "collapsed": false,
+                                "disable_collapse": true,
+                                "disable_edit_json": true,
+                                "disable_properties": true,
+                                "grid_columns": 12
+                            },
+							"properties": {
+								"state": {
+                                    "type": "string",
+                                    "title": "State",
+                                    "enum": ["Homogeneous", "Heterogeneous", "Powder/Gauge", "Discontinuous", "Continuous", "Composite"],
+                                    "propertyOrder": 2,
+                                    "options": {
+                                        "grid_columns": 3
+                                    }
+                                },
+								"note": {
+									"type": "string",
+									"title": "Note",
+									"propertyOrder": 3,
+									"options": {
+                                        "grid_columns": 3
+                                    }
+								}
+							}
+                        },
+                        "composition": {
+                            "title": "Mineralogy",
+                            "propertyOrder": 2,
+                            "type": "array",
+                            "format": "tabs",
+                            "options": {
+                                "collapsed": true
+                            },
+                            "items": {
+                                "title": "Phase",
+                                "headerTemplate": "{{self.material}}",
+                                "$ref": "files/definitions.schema.json#/definitions/phase",
+                                "format": "grid-strict",
+                                "multiple": true,
+                                "required": [],
+                                "options": {
+                                    "disable_collapse": true,
+                                    "disable_edit_json": true,
+                                    "disable_properties": true,
+                                    "compact": true
+                                },
+                                "properties": {
+                                    "mineral": {
+                                        "title": "Mineral",
+                                        "$ref": "files/definitions.schema.json#/definitions/minerals",
+                                        "propertyOrder": 0,
+                                        "options": {
+                                            "collapsed": false,
+                                            "disable_collapse": true,
+                                            "disable_edit_json": true,
+                                            "disable_properties": true,
+                                            "grid_columns": 3
+                                        }
+                                    },
+                                    "grainsize": {
+                                        "type": "number",
+                                        "title": "Grain Size [μm]",
+                                        "propertyOrder": 1,
+                                        "options": {
+                                            "grid_columns": 3
+                                        }
+                                    }
+                                },
+                                "defaultProperties": [
+                                    "mineral",
+                                    "fraction",
+                                    "unit",
+                                    "grainsize"
+                                ]
+                            }
+                        },
+                        "provenance": {
+                            "title": "Provenance",
+                            "$ref": "files/definitions.schema.json#/definitions/provenance",
+                            "propertyOrder": 3,
+                            "options": {
+                                "collapsed": true,
+                                "disable_collapse": false,
+                                "disable_edit_json": true,
+                                "disable_properties": true,
+                                "format": "grid-strict",
+                                "grid_columns": 12
+                            }
+                        },
+                        "texture": {
+                            "title": "Texture",
+                            "type": "object",
+                            "propertyOrder": 4,
+                            "options": {
+                                "collapsed": true,
+                                "disable_collapse": false,
+                                "disable_edit_json": true,
+                                "disable_properties": true,
+                                "format": "grid-strict",
+                                "grid_columns": 12
+                            },
+                            "properties": {
+                                "bedding": {
+                                    "type": "string",
+                                    "title": "Bedding",
+                                    "options": {
+                                        "grid_columns": 2
+                                    },
+                                    "propertyOrder": 3
+                                },
+                                "lineation": {
+                                    "type": "string",
+                                    "title": "Lineation",
+                                    "options": {
+                                        "grid_columns": 2
+                                    },
+                                    "propertyOrder": 4
+                                },
+                                "foliation": {
+                                    "type": "string",
+                                    "title": "Foliation",
+                                    "options": {
+                                        "grid_columns": 2
+                                    },
+                                    "propertyOrder": 5
+                                },
+                                "fault": {
+                                    "type": "string",
+                                    "title": "Fault",
+                                    "options": {
+                                        "grid_columns": 2
+                                    },
+                                    "propertyOrder": 6
+                                }   
+                            }
+                        }
+                    }
+                },
+                "parameters": {
+                    "type": "array",
+                    "format": "tabs",
+                    "title": "Parameters",
+                    "description": "Sample Parameters (pre experimental)",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true
+                    },
+                    "items": {
+                        "title": "Step",
+                        "headerTemplate": "{{self.control}}",
+                        "multiple": false,
+                        "format": "grid-strict",
+                        "required": [],
+                        "options": {
+                            "grid_columns": 12,
+                            "collapsed": false,
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true
+                        },
+                        "properties": {
+                            "control": {
+                                "type": "string",
+                                "title": "Variable",
+                                "format": "choice",
+                                "propertyOrder": 0,
+                                "enum": [
+                                    "Weight",
+                                    "Connected Porosity",
+                                    "Unconnected Porosity",
+                                    "Total Porosity",
+                                    "Density",
+                                    "Permeability (Gas)",
+                                    "Permeability (Water)",
+                                    "Temperature",
+                                    "Humidity",
+                                    "Fluid Saturation",
+                                    "Stress",
+                                    "Other"
+                                ],
+                                "options": {
+                                    "grid_columns": 4
+                                }
+                            },
+                            "value": {
+                                "title": "Value",
+                                "type": "string",
+                                "options": {
+                                    "grid_columns": 3
+                                }
+                            },
+                            "unit": {
+                                "$ref": "files/definitions.schema.json#/definitions/unit",
+                                "title": "Unit",
+                                "options": {
+                                    "grid_columns": 3
+                                }
+                            },
+                            "prefix": {
+                                "$ref": "files/definitions.schema.json#/definitions/prefix",
+                                "title": "Prefix",
+                                "default": "-",
+                                "options": {
+                                    "grid_columns": 2
+                                }
+                            },
+                            "note": {
+                                "title": "Note (Measurement and Treatment)",
+                                "type": "string",
+                                "options": {
+                                    "grid_columns": 12
+                                }
+                            }
+                        }
+                    }
+                },
+                "documents": {
+                    "$ref": "files/definitions.schema.json#/definitions/documents"
+                }
+            }
+        },
+        "experiment": {
+            "type": "object",
+            "title": "Experiment",
+            "propertyOrder": 4,
+            "options": {
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true
+            },
+            "properties": {
+                "header": {
+                    "title": "<h3><strong>Experiment Form</h3></strong>",
+                    "type": "info",
+                    "description": "<ul>Name and Description; Dataset Author Information; Experimental Details; Experimental Protocol</ul>"
+                },
+                "title": {
+                    "type": "string",
+                    "title": "Title",
+                    "options": {
+                        "grid_columns": 12,
+                        "grid_break": true
+                    }
+                },
+                "project": {
+                    "title": "Project",
+                    "type": "string",
+                    "format": "choices",
+                    "enum": [
+                        "",
+                        "Carbon Sequestration",
+                        "Crack Healing",
+                        "Yield Point Study Carrara",
+                        "MSGC",
+                        "Calibration",
+                        "Pilot",
+                        "Training",
+                        "Test"
+                    ],
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "id": {
+                    "type": "string",
+                    "title": "Experiment ID",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "ieda": {
+                    "type": "string",
+                    "title": "IEDA ID",
+                    "options": {
+                        "grid_columns": 4,
+                        "grid_break": true
+                    }
+                },
+                "start_date": {
+                    "type": "string",
+                    "title": "Start Date/Time",
+                    "description": "02/14/2022, 3:15 PM",
+                    "format": "datetime-local",
+                    "options": {
+                        "grid_columns": 4,
+                        "inputAttributes": {
+                            "placeholder": "YYYY-MM-DD HH:SS"
+                        }
+                    }
+                },
+                "end_date": {
+                    "type": "string",
+                    "title": "End Date/Time",
+                    "description": "02/14/2022, 3:15 PM",
+                    "format": "datetime-local",
+                    "options": {
+                        "grid_columns": 4,
+                        "inputAttributes": {
+                            "placeholder": "YYYY-MM-DD HH:SS"
+                        },
+                        "grid_break": true
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "title": "Experimental Description",
+                    "format": "markdown",
+                    "options": {
+                        "grid_columns": 12
+                    }
+                },
+                "features": {
+                    "$ref": "files/definitions.schema.json#/definitions/features",
+                    "title": "<u>Test Features:</u>",
+                    "description": "Apparatus Features",
+                    "options": {
+                        "collapsed": true,
+                        "hidden": false,
+                        "grid_columns": 12
+                    }
+                },
+                "author": {
+                    "$ref": "files/definitions.schema.json#/definitions/contact",
+                    "title": "Author",
+                    "description": "Dataset Author",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true
+                    }
+                },
+                "geometry": {
+                    "title": "Geometry",
+                    "description": "Sample and/or Assemblage Geometry",
+                    "type": "array",
+                    "format": "tabs",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true,
+                        "grid_columns": 12
+                    },
+                    "items": {
+                        "title": "Type",
+                        "headerTemplate": "{{self.type}} #{{self.order}}",
+                        "format": "grid-strict",
+                        "multiple": true,
+                        "required": [],
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "grid_columns": 12
+                        },
+                        "properties": {
+                            "order": {
+                                "type": "string",
+                                "title": "#",
+                                "options": {
+                                    "grid_columns": 1
+                                },
+                                "propertyOrder": 0
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Type",
+                                "enum": [
+                                    "Sample",
+                                    "Jacket",
+                                    "Forcing Block",
+                                    "Spacer"
+                                ],
+                                "options": {
+                                    "grid_columns": 3
+                                },
+                                "propertyOrder": 1
+                            },
+                            "geometry": {
+                                "type": "string",
+                                "title": "Geometry",
+                                "enum": [
+                                    "Cylinder",
+                                    "Rectangular",
+                                    "Circular",
+                                    "Precut",
+                                    "Dogbone",
+                                    "Split Cylinder",
+                                    "Tube"
+                                ],
+                                "options": {
+                                    "grid_columns": 3,
+                                    "grid_break": true
+                                },
+                                "propertyOrder": 2
+                            },
+                            "material": {
+                                "type": "string",
+                                "title": "Material",
+                                "propertyOrder": 0,
+                                "enum": [
+                                    "Sample",
+                                    "PET",
+                                    "PVC",
+                                    "PTFE",
+                                    "Rubber",
+                                    "Viton",
+                                    "Copper",
+                                    "Iron",
+                                    "Nickel",
+                                    "Gold",
+                                    "Platinum",
+                                    "Silver",
+                                    "Alumina",
+                                    "Porous Alumina",
+                                    "Zirconia",
+                                    "PZT"
+                                ],
+                                "options": {
+                                    "grid_columns": 3
+                                }
+                            },
+                            "dimensions": {
+                                "type": "array",
+                                "format": "table",
+                                "title": "Dimensions",
+                                "propertyOrder": 3,
+                                "options": {
+                                    "collapsed": false,
+                                    "disable_collapse": false,
+                                    "disable_edit_json": true,
+                                    "disable_properties": true
+                                },
+                                "items": {
+                                    "title": "Value",
+                                    "multiple": false,
+                                    "format": "grid-strict",
+                                    "required": [],
+                                    "options": {
+                                        "grid_columns": 12,
+                                        "disable_collapse": true,
+                                        "disable_edit_json": true,
+                                        "disable_properties": true
+                                    },
+                                    "properties": {
+                                        "variable": {
+                                            "type": "string",
+                                            "title": "Variable",
+                                            "format": "choice",
+                                            "propertyOrder": 0,
+                                            "enum": [
+                                                "Length",
+                                                "Diameter",
+                                                "Width",
+                                                "Span",
+                                                "Height",
+                                                "Wall Thickness",
+                                                "Bore Diameter",
+                                                "Fault Angle"
+                                            ],
+                                            "options": {
+                                                "grid_columns": 3
+                                            }
+                                        },
+                                        "value": {
+                                            "title": "Value",
+                                            "type": "number",
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "unit": {
+                                            "$ref": "files/definitions.schema.json#/definitions/unit",
+                                            "title": "Unit"
+                                        },
+                                        "prefix": {
+                                            "$ref": "files/definitions.schema.json#/definitions/prefix",
+                                            "title": "Prefix",
+                                            "default": "-"
+                                        },
+                                        "note": {
+                                            "title": "Note",
+                                            "type": "string",
+                                            "options": {
+                                                "grid_columns": 4
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "protocol": {
+                    "type": "array",
+                    "title": "Protocol",
+                    "description": "Step by Step Objectives and Protocol ",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true
+                    },
+                    "format": "tabs",
+                    "items": {
+                        "title": "Step",
+                        "headerTemplate": "{{self.test}}",
+                        "type": "object",
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "compact": true
+                        },
+                        "format": "grid-strict",
+                        "id": "step",
+                        "properties": {
+                            "description": {
+                                "title": "Description",
+                                "type": "string",
+                                "propertyOrder": 2,
+                                "options": {
+                                    "grid_columns": 12
+                                }
+                            },
+                            "test": {
+                                "title": "Step",
+                                "type": "string",
+                                "propertyOrder": 0,
+                                "format": "choices",
+                                "options": {
+                                    "grid_columns": 4
+                                },
+                                "enumSource": "test_groups",
+                                "watch": {
+                                    "test_groups": "root.experiment.features"
+                                }
+                            },
+                            "objective": {
+                                "title": "Objective",
+                                "type": "string",
+                                "propertyOrder": 1,
+                                "options": {
+                                    "grid_columns": 8,
+                                    "grid_break": true
+                                }
+                            },
+                            "parameters": {
+                                "type": "array",
+                                "format": "table",
+                                "title": "Parameter",
+                                "propertyOrder": 3,
+                                "options": {
+                                    "collapsed": false,
+                                    "disable_collapse": true,
+                                    "disable_edit_json": true,
+                                    "disable_properties": true,
+                                    "compact": true
+                                },
+                                "items": {
+                                    "title": "Parameter",
+                                    "headerTemplate": "{{self.type}}",
+                                    "multiple": true,
+                                    "required": [],
+                                    "options": {
+                                        "grid_columns": 12
+                                    },
+                                    "properties": {
+                                        "control": {
+                                            "type": "string",
+                                            "title": "Variable",
+                                            "format": "choice",
+                                            "propertyOrder": 0,
+                                            "enum": [
+                                                "Temperature T",
+                                                "Confining Pressure Pc",
+                                                "Pore Pressure Pp",
+                                                "Time t",
+                                                "Frequency",
+                                                "Amplitude",
+                                                "Stress σ1",
+                                                "Strain ε1",
+                                                "Strain Rate ε1/dt",
+                                                "Displacement Δs1",
+                                                "Force F2",
+                                                "Stress σ2",
+                                                "Strain ε2",
+                                                "Strain Rate ε2/dt",
+                                                "Displacement Δs2",
+                                                "Force F2",
+                                                "Stress σ3",
+                                                "Strain ε3",
+                                                "Strain Rate ε3/dt",
+                                                "Displacement Δs3",
+                                                "Force F3",
+                                                "Saturation",
+                                                "Humidity",
+                                                "Count"
+                                            ],
+                                            "options": {
+                                                "grid_columns": 3
+                                            }
+                                        },
+                                        "value": {
+                                            "title": "Value",
+                                            "type": "number",
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "unit": {
+                                            "$ref": "files/definitions.schema.json#/definitions/unit",
+                                            "title": "Unit"
+                                        },
+                                        "note": {
+                                            "title": "Note",
+                                            "type": "string",
+                                            "options": {
+                                                "grid_columns": 4
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "documents": {
+                    "$ref": "files/definitions.schema.json#/definitions/documents"
+                }
+            }
+        },
+        "data": {
+            "type": "object",
+            "title": "Data",
+            "propertyOrder": 5,
+            "options": {
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true
+            },
+            "properties": {
+                "header": {
+                    "title": "<h3><strong>Data Form</strong></h3>",
+                    "type": "info",
+                    "propertyOrder": 0,
+                    "description": "<ul>Image Data, Time Series Data, Measured Parameters, etc..</ul>"
+                },
+                "keys": {
+                    "title": "Reference Keys",
+                    "description": "References for Facility, Apparatus, Sample, User and Experiment",
+                    "format": "grid-strict",
+                    "propertyOrder": 0,
+                    "options": {
+                        "collapsed": false,
+                        "disable_collapse": true,
+                        "disable_edit_json": true,
+                        "disable_properties": true,
+                        "grid_columns": 12
+                    },
+                    "properties": {
+                        "facility": {
+                            "title": "Facility ID",
+                            "type": "string",
+                            "propertyOrder": 0,
+                            "template": "{{facility_id}}",
+                            "watch": {
+                                "facility_id": "root.facility.id"
+                            },
+                            "options": {
+                                "grid_columns": 2
+                            },
+                            "readOnly": true
+                        },
+                        "apparatus": {
+                            "title": "Apparatus ID",
+                            "type": "string",
+                            "propertyOrder": 1,
+                            "template": "{{apparatus_id}}",
+                            "watch": {
+                                "apparatus_id": "root.apparatus.id"
+                            },
+                            "options": {
+                                "grid_columns": 2
+                            },
+                            "readOnly": true
+                        },
+                        "sample": {
+                            "title": "Sample ID",
+                            "type": "string",
+                            "propertyOrder": 2,
+                            "template": "{{sample_id}}",
+                            "watch": {
+                                "sample_id": "root.sample.id"
+                            },
+                            "options": {
+                                "grid_columns": 2
+                            },
+                            "readOnly": true
+                        },
+                        "user": {
+                            "title": "User ID",
+                            "type": "string",
+                            "propertyOrder": 3,
+                            "template": "{{user_id}}",
+                            "watch": {
+                                "user_id": "root.experiment.author.id"
+                            },
+                            "options": {
+                                "grid_columns": 2
+                            },
+                            "readOnly": true
+                        },
+                        "experiment": {
+                            "title": "Experiment ID",
+                            "type": "string",
+                            "propertyOrder": 4,
+                            "template": "{{experiment_id}}",
+                            "watch": {
+                                "experiment_id": "root.experiment.id"
+                            },
+                            "options": {
+                                "grid_columns": 2
+                            },
+                            "readOnly": true
+                        }
+                    }
+                },
+                "datasets": {
+                    "title": "Datasets",
+                    "description": "Parameters, Analytical Data, Microstructures, Time Series Data",
+                    "type": "array",
+                    "format": "tabs",
+                    "options": {
+                        "collapsed": true
+                    },
+                    "items": {
+                        "title": "Data",
+                        "headerTemplate": "{{self.data}}{{self.id}}({{self.index}})",
+                        "format": "grid-strict",
+                        "multiple": true,
+                        "required": [],
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "grid_columns": 12,
+                            "compact": true
+                        },
+                        "properties": {
+                            "data": {
+                                "type": "string",
+                                "title": "Data",
+                                "format": "choice",
+                                "propertyOrder": 0,
+                                "enum": [
+                                    "AcousticVelocity-Active",
+                                    "AcousticEmission-Triggered",
+                                    "AcousticEmission-Continuous",
+                                    "Parameters",
+                                    "Pore_Fluid",
+                                    "Time_Series",
+                                    "Sample_Description",
+                                    "Imaging",
+                                    "EBSD",
+                                    "WDS",
+                                    "Thin_Section",
+                                    "Raman",
+                                    "Infrared_Spectroscopy",
+                                    "TEM",
+                                    "CL",
+                                    "Profilometry",
+                                    "Acid_Etching",
+                                    "Evaporative_Grid",
+                                    "Neutron_Diffraction",
+                                    "X-Ray_Spectra",
+                                    "X-Ray_Graphs",
+                                    "Thermal_Etching",
+                                    "Fiducal_Marks",
+                                    "XRCT",
+                                    "CT_Scan",
+                                    "SEM",
+                                    "EDS",
+                                    "EDX",
+                                    "Optical_Microscopy",
+                                    "Infrared",
+                                    "Raman",
+                                    "XRD",
+                                    "XRF",
+                                    "Confocal_Microscopy",
+                                    "Photoelasticity",
+                                    "Polarized_Microscopy",
+                                    "Fluorescence",
+                                    "Time_Synchronization"
+                                ],
+                                "options": {
+                                    "grid_columns": 3
+                                }
+                            },
+                            "index": {
+                                "type": "string",
+                                "title": "Index",
+                                "enum": [
+                                    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"],
+                                "propertyOrder": 2,
+                                "options": {
+                                    "grid_columns": 2
+                                }
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Type",
+                                "enum": [
+                                    "Picture",
+                                    "Video",
+                                    "Data",
+                                    "Software",
+                                    "Other"
+                                ],
+                                "propertyOrder": 3,
+                                "options": {
+                                    "grid_columns": 2
+                                }
+                            },
+                            "source": {
+                                "type": "string",
+                                "title": "File Upload",
+                                "options": {
+                                    "hidden": true
+                                },
+                                "media": {
+                                    "type": "text/html",
+                                    "binaryEncoding": "base64"
+                                },
+                                "fieldType": "text",
+                                "propertyOrder": 4
+                            },
+                            "format": {
+                                "type": "string",
+                                "title": "Format",
+                                "format": "choice",
+                                "fieldType": "text",
+                                "isSearchable": true,
+                                "enum": [
+                                    "text",
+                                    "csv",
+                                    "jpeg",
+                                    "png",
+                                    "zip",
+                                    "rar",
+                                    "base64",
+                                    "h5",
+                                    "tdms",
+                                    "mat"
+                                ],
+                                "propertyOrder": 5,
+                                "options": {
+                                    "grid_columns": 2,
+                                    "grid_break": true
+                                }
+                            },
+                            "id": {
+                                "type": "string",
+                                "title": "Picture/Data ID",
+                                "propertyOrder": 6,
+                                "options": {
+                                    "grid_columns": 3,
+                                    "displayValue": true
+                                }
+                            },
+                            "path": {
+                                "title": "File Path",
+                                "type": "string",
+                                "propertyOrder": 7,
+                                "format": "url",
+                                "options": {
+                                    "grid_columns": 6,
+                                    "upload": true
+                                },
+                                "links": [{
+                                        "href": "{{self}}",
+                                        "rel": "Document"
+                                    }
+                                ]
+                            },
+                            "rating": {
+                                "type": "string",
+                                "format": "starrating",
+                                "title": "Data Quality",
+                                "enum": [
+                                    "Low",
+                                    "Acceptable",
+                                    "Good",
+                                    "Very Good",
+                                    "Exceptional"
+                                ],
+                                "propertyOrder": 8,
+                                "options": {
+                                    "grid_columns": 3,
+                                    "displayValue": true,
+                                    "grid_break": true
+                                }
+                            },
+                            "description": {
+                                "type": "string",
+                                "title": "Description",
+                                "format": "text",
+                                "fieldType": "text",
+                                "propertyOrder": 9,
+                                "options": {
+                                    "grid_columns": 10,
+                                    "grid_break": true
+                                }
+                            },
+                            "headers": {
+                                "title": "Data Headers",
+                                "description": "Time Series Headers",
+                                "propertyOrder": 10,
+                                "type": "array",
+                                "format": "tabs",
+                                "options": {
+                                    "collapsed": true,
+                                    "dependencies": {
+                                        "data": "Time Series"
+                                    }
+                                },
+                                "items": {
+                                    "title": "Data",
+                                    "headerTemplate": "# {{self.number}} {{self.header.spec_a}} {{self.header.type}}",
+                                    "format": "grid-strict",
+                                    "multiple": true,
+                                    "required": [],
+                                    "options": {
+                                        "disable_collapse": true,
+                                        "disable_edit_json": true,
+                                        "disable_properties": true,
+                                        "grid_columns": 12
+                                    },
+                                    "properties": {
+                                        "header": {
+                                            "title": "Header",
+                                            "$ref": "files/definitions.schema.json#/definitions/header",
+                                            "propertyOrder": 0,
+                                            "options": {
+                                                "disable_collapse": true,
+                                                "disable_edit_json": true,
+                                                "disable_properties": true,
+                                                "keep_oneof_values": false
+                                            }
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "title": "Type",
+                                            "enum": [
+                                                "",
+                                                "Analog Input",
+                                                "Analog Output",
+                                                "Digital Input",
+                                                "Digital Output",
+                                                "System Data",
+                                                "System Clock",
+                                                "Calculated"
+                                            ],
+                                            "propertyOrder": 1,
+                                            "options": {
+                                                "grid_columns": 3
+                                            }
+                                        },
+                                        "number": {
+                                            "type": "string",
+                                            "title": "Channel #",
+                                            "propertyOrder": 2,
+                                            "enum": [
+                                                "0",
+                                                "1",
+                                                "2",
+                                                "3",
+                                                "4",
+                                                "5",
+                                                "6",
+                                                "7",
+                                                "8",
+                                                "9",
+                                                "10",
+                                                "11",
+                                                "12",
+                                                "13",
+                                                "14",
+                                                "15",
+                                                "16",
+                                                "17",
+                                                "18",
+                                                "19",
+                                                "20",
+                                                "21",
+                                                "22",
+                                                "23",
+                                                "24",
+                                                "25",
+                                                "26",
+                                                "27",
+                                                "28",
+                                                "29",
+                                                "30",
+                                                "31",
+                                                "32"
+                                            ],
+                                            "options": {
+                                                "grid_columns": 3
+                                            }
+                                        },
+                                        "note": {
+                                            "type": "string",
+                                            "title": "Note",
+                                            "propertyOrder": 2,
+                                            "options": {
+                                                "grid_columns": 6,
+                                                "grid_break": true
+                                            }
+                                        },
+                                        "rating": {
+                                            "type": "string",
+                                            "format": "starrating",
+                                            "title": "Data Quality",
+                                            "enum": [
+                                                "Low",
+                                                "Acceptable",
+                                                "Good",
+                                                "Very Good",
+                                                "Exceptional"
+                                            ],
+                                            "propertyOrder": 3,
+                                            "options": {
+                                                "grid_columns": 4,
+                                                "displayValue": true,
+                                                "grid_break": true
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "parameters": {
+                                "type": "array",
+                                "format": "table",
+                                "title": "Parameter List",
+                                "options": {
+                                    "collapsed": true,
+                                    "disable_collapse": false,
+                                    "disable_edit_json": true,
+                                    "disable_properties": true,
+                                    "dependencies": {
+                                        "data": "Parameters"
+                                    }
+                                },
+                                "items": {
+                                    "title": "Parameter",
+                                    "headerTemplate": "{{self.type}}",
+                                    "multiple": true,
+                                    "format": "grid-strict",
+                                    "options": {
+                                        "grid_columns": 12
+                                    },
+                                    "properties": {
+                                        "control": {
+                                            "type": "string",
+                                            "title": "Data",
+                                            "format": "choice",
+                                            "propertyOrder": 0,
+                                            "enum": [
+                                                "Weight", "Connected Porosity", "Unconnected Porosity", "Length", "Diameter", "Width", "Span", "Height", "Bore Diameter", "Fault Angle", "Total Porosity", "Density", "Gas Permeability", "Fluid Permeability", "Final Strain ε", "Corrected Strain Rate ε/dt", "Final Displacement Δs", "Maximum Force F", "Maximum Stress σ", "Yield Stress σ", "Machine Stiffness N/mm", "Roughness", "Friction Parameter", "Unconfined Compressive Strength (UCS)", "Ultimate Tensile Strength", "Ultimate Shear Strength", "True Tension Strength", "Compressive Strength (σ2=σ3)", "Compressive Strength (σ1=σ2)", "True Triaxial Strength", "Yield Strength", "Tensional Strength", "Torsion Strength", "Flow Strength", "Fracture Strength"
+                                            ],
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "value": {
+                                            "title": "Value",
+                                            "type": "string",
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "error": {
+                                            "title": "Error",
+                                            "type": "string",
+                                            "options": {
+                                                "grid_columns": 2
+                                            }
+                                        },
+                                        "unit": {
+                                            "$ref": "files/definitions.schema.json#/definitions/unit",
+                                            "title": "Unit"
+                                        },
+                                        "prefix": {
+                                            "$ref": "files/definitions.schema.json#/definitions/prefix",
+                                            "title": "Prefix",
+                                            "default": "-"
+                                        },
+                                        "note": {
+                                            "title": "Note",
+                                            "type": "string",
+                                            "options": {
+                                                "grid_columns": 4
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "fluid": {
+                                "type": "object",
+                                "title": "Pore Fluid",
+                                "description": "Pore Fluid Composition and Chemistry",
+                                "options": {
+                                    "collapsed": true,
+                                    "disable_collapse": false,
+                                    "disable_edit_json": true,
+                                    "disable_properties": true,
+                                    "keep_oneof_values": false,
+                                    "format": "grid-strict",
+                                    "grid_columns": 12,
+                                    "dependencies": {
+                                        "data": "Pore Fluid"
+                                    }
+                                },
+                                "properties": {
+                                    "phases": {
+                                        "title": "Phases",
+                                        "description": "Add Pore Fluid Phases",
+                                        "type": "array",
+                                        "format": "tabs",
+                                        "items": {
+                                            "title": "Phase",
+                                            "headerTemplate": "{{self.component}}",
+                                            "$ref": "files/definitions.schema.json#/definitions/phase",
+                                            "format": "grid-strict",
+                                            "multiple": true,
+                                            "required": [],
+                                            "options": {
+                                                "disable_collapse": true,
+                                                "disable_edit_json": true,
+                                                "disable_properties": true
+                                            },
+                                            "properties": {
+                                                "composition": {
+                                                    "title": "Chemistry Data",
+                                                    "type": "string",
+                                                    "format": "choice",
+                                                    "enum": [
+                                                        "Chemistry",
+                                                        "None"
+                                                    ],
+                                                    "options": {
+                                                        "grid_columns": 3
+                                                    }
+                                                },
+                                                "solutes": {
+                                                    "title": "Chemistry",
+                                                    "description": "Add Solutes",
+                                                    "type": "array",
+                                                    "format": "table",
+                                                    "options": {
+                                                        "disable_collapse": true,
+                                                        "disable_edit_json": true,
+                                                        "disable_properties": true,
+                                                        "dependencies": {
+                                                            "composition": [
+                                                                "Chemistry"
+                                                            ]
+                                                        }
+                                                    },
+                                                    "items": {
+                                                        "title": "Part",
+                                                        "headerTemplate": "{{self.component}}",
+                                                        "$ref": "files/definitions.schema.json#/definitions/solute",
+                                                        "format": "grid-strict",
+                                                        "multiple": true,
+                                                        "required": [],
+                                                        "options": {
+                                                            "disable_collapse": true,
+                                                            "disable_edit_json": true,
+                                                            "disable_properties": true
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

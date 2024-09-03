@@ -1,0 +1,1744 @@
+{
+    "definitions": {
+        "contact": {
+            "type": "object",
+            "title": "Contact",
+            "properties": {
+                "firstname": {
+                    "type": "string",
+                    "title": "First Name"
+                },
+                "lastname": {
+                    "type": "string",
+                    "title": "Last Name"
+                },
+                "affiliation": {
+                    "type": "string",
+                    "title": "Affiliation",
+                    "enum": [
+                        "",
+                        "Student",
+                        "Researcher",
+                        "Lab Manager",
+                        "Principal Investigator",
+                        "Technical Associate",
+                        "Faculty",
+                        "Professor",
+                        "Visitor",
+                        "Service User",
+                        "External User"
+                    ]
+                },
+                "email": {
+                    "type": "string",
+                    "title": "Email",
+                    "format": "email"
+                },
+                "phone": {
+                    "type": "string",
+                    "title": "Phone"
+                },
+                "website": {
+                    "type": "string",
+                    "title": "Website"
+                },
+                "id": {
+                    "type": "string",
+                    "title": "ORCID ID"
+                }
+            }
+        },
+        "facility": {
+            "type": "object",
+            "title": "Facility Information",
+            "format": "grid-strict",
+            "properties": {
+                "institute": {
+                    "type": "string",
+                    "title": "Institute Name",
+                    "propertyOrder": 0,
+                    "options": {
+                        "grid_columns": 6
+                    }
+                },
+                "department": {
+                    "type": "string",
+                    "title": "Department",
+                    "propertyOrder": 1,
+                    "options": {
+                        "grid_columns": 6,
+                        "grid_break": true
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "title": "Name",
+                    "propertyOrder": 2,
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "title": "Type",
+                    "propertyOrder": 3,
+                    "options": {
+                        "grid_columns": 3
+                    },
+                    "enum": [
+                        "",
+                        "University Lab",
+                        "Government Facility",
+                        "Private Industry Lab",
+                        "Shared Facility",
+                        "Military",
+                        "Other"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "title": "ID",
+                    "propertyOrder": 4,
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "website": {
+                    "type": "string",
+                    "title": "Website",
+                    "format": "url",
+                    "propertyOrder": 5,
+                    "options": {
+                        "grid_columns": 3,
+                        "grid_break": true
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "title": "Description",
+                    "propertyOrder": 6,
+                    "options": {
+                        "grid_columns": 12,
+                        "grid_break": true
+                    }
+                }
+            }
+        },
+        "location": {
+            "title": "Location",
+            "type": "object",
+            "format": "grid-strict",
+            "properties": {
+                "street": {
+                    "type": "string",
+                    "title": "Street + Number",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "building": {
+                    "type": "string",
+                    "title": "Building - Apartment",
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "postcode": {
+                    "type": "string",
+                    "title": "Postal Code",
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "city": {
+                    "type": "string",
+                    "title": "City",
+                    "options": {
+                        "grid_columns": 2,
+                        "grid_break": true
+                    }
+                },
+                "state": {
+                    "type": "string",
+                    "title": "State",
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "country": {
+                    "type": "string",
+                    "title": "Country",
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "latitude": {
+                    "type": "number",
+                    "title": "Latitude (decimal degree)",
+                    "minimum": -90,
+                    "maximum": 90,
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "longitude": {
+                    "type": "number",
+                    "title": "Longitude (decimal degree)",
+                    "minimum": -180,
+                    "maximum": 180,
+                    "options": {
+                        "grid_columns": 4
+                    }
+                }
+            }
+        },
+        "prefix": {
+            "type": "string",
+            "title": "Prefix",
+            "enum": [
+                "1E+1", "1E+2", "1E+3", "1E+4", "1E+5", "1E+6",
+                "-",
+                "1E-1", "1E-2", "1E-3", "1E-4", "1E-5", "1E-6"
+            ],
+            "options": {
+                "grid_columns": 3
+            }
+        },
+        "unit": {
+            "type": "string",
+            "title": "Unit",
+            "enum": [
+                "degC",
+                "degK",
+                "sec",
+                "min",
+                "hour",
+                "Volt",
+                "mV",
+                "Amperage",
+                "mA",
+                "Ohm",
+                "Pa",
+                "MPa",
+                "GPa",
+                "bar",
+                "kbar",
+                "N",
+                "kN",
+                "g",
+                "mg",
+                "μg",
+                "m",
+                "cm",
+                "mm",
+                "μm",
+                "Hz",
+                "kHz",
+                "MHz",
+                "Pa·s",
+                "Darcy",
+                "mDarcy",
+                "m-1",
+                "m2",
+                "milistrain",
+                "mm·sec-1",
+                "N·sec-1",
+                "sec-1",
+                "kN·mm-1",
+                "%",
+                "count",
+                "cc",
+                "mm3"
+            ]
+        },
+        "sample": {
+            "type": "object",
+            "options": {
+                "collapsed": false,
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true
+            },
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "title": "Name",
+                    "propertyOrder": 0,
+                    "options": {
+                        "grid_columns": 3
+                    }
+                },
+                "igsn": {
+                    "type": "string",
+                    "title": "IGSN #",
+                    "propertyOrder": 1,
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "id": {
+                    "type": "string",
+                    "title": "Sample ID",
+                    "propertyOrder": 2,
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "title": "Description",
+                    "propertyOrder": 3,
+                    "options": {
+                        "grid_columns": 5,
+                        "grid_break": true
+                    }
+                },
+                "parent": {
+                    "title": "Parent Sample ",
+                    "propertyOrder": 4,
+                    "format": "grid-strict",
+                    "options": {
+                        "grid_columns": 12
+                    },
+                    "oneOf": [{
+                            "title": "None",
+                            "type": "null"
+                        }, {
+                            "title": "Label",
+                            "$ref": "files/definitions.schema.json#/definitions/sample"
+                        }
+                    ]
+                }
+            }
+        },
+        "calibration": {
+            "type": "object",
+            "title": "Calibration",
+            "properties": {
+                "info": {
+                    "type": "info",
+                    "title": "Information",
+                    "description": "Data can be entered as Pairs: Calibration Table-Input:Unit; Linear Regression1 Input@0:Input/Unit; Linear Regression2 u=(x*a0+a1)*a2+a3; Polynomial-Base:Exponent); Frequency Response Table-Frequency:Amplitude"
+                },
+                "template": {
+                    "type": "string",
+                    "title": "Template",
+                    "options": {
+                        "grid_columns": 4
+                    },
+                    "enum": ["Input:Unit", "Input@0:Input/Unit", "(a0:a1)(a2:a3)", "Base:Exponent", "Frequency:Amplitude"]
+                },
+                "input": {
+                    "title": "Input",
+                    "$ref": "#/definitions/unit",
+                    "options": {
+                        "grid_columns": 3
+                    }
+                },
+                "unit": {
+                    "title": "Unit",
+                    "$ref": "#/definitions/unit",
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "excitation": {
+                    "type": "string",
+                    "title": "Excitation",
+                    "options": {
+                        "grid_columns": 3,
+                        "grid_break": true
+                    }
+                },
+                "date": {
+                    "type": "string",
+                    "title": "Date",
+                    "description": "02/14/2022, 3:15 PM",
+                    "format": "datetime-local",
+                    "options": {
+                        "grid_columns": 5,
+                        "inputAttributes": {
+                            "placeholder": "YYYY-MM-DD HH:SS"
+                        }
+                    }
+                },
+                "note": {
+                    "type": "string",
+                    "title": "Calibration Note",
+                    "options": {
+                        "grid_columns": 7,
+                        "grid_break": true
+                    }
+                },
+                "data": {
+                    "type": "array",
+                    "title": "Data",
+                    "format": "table",
+                    "options": {
+                        "collapsed": true
+                    },
+                    "items": {
+                        "title": "Data",
+                        "format": "grid-strict",
+                        "multiple": true,
+                        "options": {
+                            "disable_collapse": true,
+                            "disable_edit_json": true,
+                            "disable_properties": true,
+                            "grid_columns": 12
+                        },
+                        "properties": {
+                            "a": {
+                                "type": "string",
+                                "title": "A",
+                                "options": {
+                                    "grid_columns": 3
+                                }
+                            },
+                            "b": {
+                                "type": "string",
+                                "title": "B",
+                                "options": {
+                                    "grid_columns": 3
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "type": "object",
+            "title": "Sensor/Actuator",
+            "description": "Sensor or Actuator Information",
+            "properties": {
+                "template": {
+                    "title": "IEEE Sensor Template",
+                    "type": "string",
+                    "enum": [
+                        "Accelerometer & Force",
+                        "Charge Amplifier (w/ attached accelerometer)",
+                        "Charge Amplifier (w/ attached force transducer)",
+                        "Microphone with built-in preamplifier",
+                        "Microphone Preamplfiers (w/ attached microphone)",
+                        "Microphones (capacitive)",
+                        "High-Level Voltage Output Sensors",
+                        "Current Loop Output Sensors",
+                        "Resistance Sensors",
+                        "Bridge Sensors",
+                        "LVDT/RVDT Sensors",
+                        "Strain Gage",
+                        "Thermocouple",
+                        "Resistance Temperature Detectors (RTDs)",
+                        "Thermistor",
+                        "Potentiometric Voltage Divider"
+                    ],
+                    "options": {
+                        "grid_columns": 8
+                    }
+                },
+                "detail": {
+                    "type": "string",
+                    "title": "Sensor/Actuator",
+                    "enum": [
+                        "Clock",
+                        "LVDT",
+                        "Load Cell",
+                        "Capacitive Load Cell",
+                        "Pressure Transducer",
+                        "Thermocouple",
+                        "Hall Sensor",
+                        "P-Wave Sensor",
+                        "S-Wave Sensor",
+                        "Encoder",
+                        "Strain Gauge",
+                        "Thermistor",
+                        "Force Gauge",
+                        "DCDT",
+                        "pH-Meter",
+                        "Flow Meter",
+                        "--",
+                        "Linear Motor",
+                        "Servo Motor",
+                        "Step Motor",
+                        "Actuator",
+                        "Heater",
+                        "Power",
+                        "Trigger"
+                    ],
+                    "options": {
+                        "grid_columns": 4
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "title": "Type",
+                    "enum": ["Active", "Passive"]
+                },
+                "id": {
+                    "type": "string",
+                    "title": "Manufacturer ID"
+                },
+                "model": {
+                    "type": "string",
+                    "title": "Model #"
+                },
+                "version": {
+                    "type": "string",
+                    "title": "Version Letter"
+                },
+                "number": {
+                    "type": "string",
+                    "title": "Version #"
+                },
+                "serial": {
+                    "type": "string",
+                    "title": "Serial #"
+                }
+            }
+        },
+        "igneous_lithology": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "isSearchable": false,
+            "enum":
+            ["Other", "alkali feldspar granite", "andesite", "anorthosite", "aplite", "diabase", "diorite", "granite", "harzburgite", "lapilli tuff", "norite", "pegmatite", "peridotite", "quartz monzonite", "rhyolite", "syenite", "tonalite", "trachyandesite", "tuff breccia"]
+        },
+        "metam_lithology": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "isSearchable": false,
+            "enum":
+            ["Other", "slate", "amphibolite", "blackwall", "blueschist", "garnetite", "glaucophanite", "granulite", "greenstone", "hornfels", "metaarkose", "metabasite", "metacarbonate", "metagranite", "metagraywacke", "metaigneous", "meta-iron formation", "meta-ultramafic", "orthogneiss", "paragneiss", "phyllite", "phyllonite", "pyroxenite", "quartzite", "schist", "serpentinite", "skarn"]
+        },
+        "sedimentary": {
+            "title": "Category",
+            "type": "object",
+            "options": {
+                "collapsed": false,
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "compact": true,
+                "keep_oneof_values": false
+            },
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "options": {
+                        "hidden": true
+                    }
+                }
+            },
+            "oneOf": [{
+                    "type": "object",
+                    "title": "Limestone",
+                    "properties": {
+                        "category": {
+                            "type": "string",
+                            "enum": [
+                                "Limestone"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "formation": {
+                            "title": "Formation",
+                            "type": "string",
+                            "fieldType": "selectlist",
+                            "displayType": "select",
+                            "enum": ["Anstrude limestone", "Austin limestone", "Balmholtz limestone", "Carthage limestone", "Chauvigny limestone", "Comiso limestone", "Estaillades limestone", "Fontvieille limestone", "Hallekis limestone", "Holston limestone", "Indiana limestone", "Irondequoit limestone", "Leitha limestone", "Lueders limestone", "Majella limestone", "Red Oland limestone", "Reynales limestone", "Saint Maximin limestone", "Shelly limestone", "Solnhofen limestone", "Tavel limestone", "chalk", "travertine"]
+                        },
+                        "type": {
+                            "type": "string",
+                            "title": "Note",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 6
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "epos_lithology": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "isSearchable": false,
+            "enum":
+            ["Other", "acidic_igneous_material", "acidic_igneous_rock", "alkali_feldspar_granite", "alkali_feldspar_rhyolite", "alkali_feldspar_syenite", "alkali_feldspar_syenitic_rock", "alkali_feldspar_trachyte", "alkali_feldspar_trachytic_rock", "alkali - olivine_basalt", "amphibolite", "andesite", "anorthosite", "anorthositic_rock", "anthracite_coal", "anthropogenic_material", "anthropogenic_unconsolidated_material", "aphanite", "aplite", "arenite", "ash_and_lapilli", "ash_breccia_bomb_or_block_tephra", "ash_tuff_lapillistone_and_lapilli_tuff", "basalt", "basanite", "basanitic_foidite", "basic_igneous_material", "basic_igneous_rock", "bauxite", "biogenic_sediment", "biogenic_silica_sedimentary_rock", "bituminous_coal", "boninite", "boulder_gravel_size_sediment", "boundstone", "breccia", "breccia_gouge_series", "calcareous_carbonate_sediment", "calcareous_carbonate_sedimentary_material", "calcareous_carbonate_sedimentary_rock", "carbonate_mud", "carbonate_mudstone", "carbonate_ooze", "carbonate_rich_mud", "carbonate_rich_mudstone", "carbonate_sediment", "carbonate_sedimentary_material", "carbonate_sedimentary_rock", "carbonate_wackestone", "carbonatite", "cataclasite_series", "chalk", "chemical_sedimentary_material", "chlorite_actinolite_epidote_metamorphic_rock", "clastic_conglomerate", "clastic_mudstone", "clastic_sandstone", "clastic_sediment", "clastic_sedimentary_material", "clastic_sedimentary_rock", "clay", "claystone", "coal", "cobble_gravel_size_sediment", "composite_genesis_material", "composite_genesis_rock", "compound_material", "crystalline_carbonate", "dacite", "diamictite", "diamicton", "diorite", "dioritic_rock", "dioritoid", "doleritic_rock", "dolomitic_or_magnesian_sedimentary_material", "dolomitic_or_magnesian_sedimentary_rock", "dolomitic_sediment", "dolostone", "duricrust", "eclogite", "evaporite", "exotic_alkaline_rock", "exotic_composition_igneous_rock", "exotic_evaporite", "fault_related_material", "fine_grained_igneous_rock", "foid_bearing_alkali_feldspar_syenite", "foid_bearing_alkali_feldspar_trachyte", "foid_bearing_anorthosite", "foid_bearing_diorite", "foid_bearing_gabbro", "foid_bearing_latite", "foid_bearing_monzodiorite", "foid_bearing_monzogabbro", "foid_bearing_monzonite", "foid_bearing_syenite", "foid_bearing_trachyte", "foid_diorite", "foid_dioritoid", "foid_gabbro", "foid_gabbroid", "foid_monzodiorite", "foid_monzogabbro", "foid_monzosyenite", "foid_syenite", "foid_syenitoid", "foidite", "foiditoid", "foidolite", "foliated_metamorphic_rock", "fragmental_igneous_material", "fragmental_igneous_rock", "framestone", "gabbro", "gabbroic_rock", "gabbroid", "generic_conglomerate", "generic_mudstone", "generic_sandstone", "glass_rich_igneous_rock", "glassy_igneous_rock", "glaucophane_lawsonite_epidote_metamorphic_rock", "gneiss", "grainstone", "granite", "granitoid", "granodiorite", "granofels", "granulite", "gravel", "gravel_size_sediment", "high_magnesium_fine_grained_igneous_rocks", "hornblendite", "hornfels", "hybrid_sediment", "hybrid_sedimentary_rock", "igneous_material", "igneous_rock", "impact_generated_material", "impure_calcareous_carbonate_sediment", "impure_carbonate_sediment", "impure_carbonate_sedimentary_rock", "impure_dolomitic_sediment", "impure_dolostone", "impure_limestone", "intermediate_composition_igneous_material", "intermediate_composition_igneous_rock", "iron_rich_sediment", "iron_rich_sedimentary_material", "iron_rich_sedimentary_rock", "kalsilitic_and_melilitic_rock", "komatiitic_rock", "latite", "latitic_rock", "lignite", "limestone", "marble", "material_formed_in_surficial_environment", "metamorphic_rock", "metasomatic_rock", "mica_schist", "migmatite", "monzodiorite", "monzodioritic_rock", "monzogabbro", "monzogabbroic_rock", "monzogranite", "monzonite", "monzonitic_rock", "mud", "mud_size_sediment", "mylonitic_rock", "natural_unconsolidated_material", "non_clastic_siliceous_sediment", "non_clastic_siliceous_sedimentary_material", "non_clastic_siliceous_sedimentary_rock", "ooze", "organic_bearing_mudstone", "organic_rich_sediment", "organic_rich_sedimentary_material", "organic_rich_sedimentary_rock", "orthogneiss", "packstone", "paragneiss", "peat", "pegmatite", "peridotite", "phaneritic_igneous_rock", "phonolilte", "phonolitic_basanite", "phonolitic_foidite", "phonolitic_tephrite", "phonolitoid", "phosphate_rich_sediment", "phosphate_rich_sedimentary_material", "phosphorite", "phyllite", "phyllonite", "porphyry", "pure_calcareous_carbonate_sediment", "pure_carbonate_mudstone", "pure_carbonate_sediment", "pure_carbonate_sedimentary_rock", "pure_dolomitic_sediment", "pyroclastic_material", "pyroclastic_rock", "pyroxenite", "quartz_alkali_feldspar_syenite", "quartz_alkali_feldspar_trachyte", "quartz_anorthosite", "quartz_diorite", "quartz_gabbro", "quartz_latite", "quartz_monzodiorite", "quartz_monzogabbro", "quartz_monzonite", "quartz_rich_igneous_rock", "quartz_syenite", "quartz_trachyte", "quartzite", "residual_material", "rhyolite", "rhyolitoid", "rock", "rock_gypsum_or_anhydrite", "rock_salt", "sand", "sand_size_sediment", "sapropel", "schist", "sediment", "sedimentary_material", "sedimentary_rock", "serpentinite", "shale", "silicate_mud", "silicate_mudstone", "siliceous_ooze", "silt", "siltstone", "skarn", "slate", "spilite", "syenite", "syenitic_rock", "syenitoid", "syenogranite", "tephra", "tephrite", "tephritic_foidite", "tephritic_phonolite", "tephritoid", "tholeiitic_basalt", "tonalite", "trachyte", "trachytic_rock", "trachytoid", "travertine", "tuff_breccia_agglomerate_or_pyroclastic_breccia", "tuffite", "ultrabasic_igneous_rock", "ultramafic_igneous_rock", "unconsolidated_material", "wacke"]
+        },
+        "minerals": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "isSearchable": false,
+            "enum": ["Other", "Actinolite", "Aegirine", "Albite", "Alkali - feldspar", "Amphibole", "Andesine", "Annite", "Anorthite", "Apatite", "Apophyllite", "Astrophyllite", "Augite", "Axinite", "Baryte", "Beryl", "Biopyribole", "Biopyrobole", "Biotite", "Brookite", "Calcic pyroxene", "Calcite", "Carbon", "Carbonates", "Cassiterite", "Celestine", "Celsian", "Chain silicates", "Chalcocite", "Chalcopyrite", "Corundum", "Cristobalite", "Cummingtonite", "Diamond", "Diaspore", "Diopside", "Dolomite", "Ekermannite", "Enstatite", "Epidote", "Epidote Group", "Feldspar", "Fe - Mg clinoamphibole", "Ferrosilite", "Fe - Ti oxide", "Galena", "Garnet", "Gedrite", "Gibbsite", "Glauconite", "Glaucophane", "Grunerite", "Gypsum", "Hedenbergite", "Hematite", "Hercynite", "Hornblende", "Humite", "Hydroxides", "Jadeite", "Kaersutite", "Kalsilite", "Kaolinite", "Katophorite", "K feldspar", "K - feldspar", "Kyanite", "Labradorite", "Larnite", "Lawsonite", "Lepidocrocite", "Lepidolite", "Leucite", "Limonite", "Magnesite", "Magnetite", "Margarite", "Melilite", "Merwinite", "Mica", "Microcline", "Monazite", "Montmorillonite", "Mullite", "Muscovite", "Native Elements", "Nepheline", "Oligoclase", "Olivine", "Omphacite", "Opaque", "Orthoamphibole", "Ortho - and Ring Silicates", "Orthoclase", "Orthopyroxene", "Other", "Oxides", "Paragonite", "Periclase", "Perovskite", "Perthite", "Phengite", "Phlogopite", "Phosphates", "Piemontite", "Plagioclase", "Prehnite", "Pumpellyite", "Pyrite", "Pyroxmangite", "Pyrrhotite", "Quartz", "Rankinite", "Rhodochrosite", "Rhodonite", "Richterite", "Riebeckite", "Rutile", "Sanidine", "Sapphirine", "Scapolite", "Sericite", "Spinel", "Spinel Group", "Spodumene", "Spurrite", "Staurolite", "Stilpnomelane", "Sulphates", "Sulphides", "Talc", "Tectosilicates", "Tilleyite", "Titanite", "Topaz", "Tourmaline", "Tremolite", "Tridymite", "Vermiculite", "Vesuvanite", "White Mica", "Wollastonite", "Wonesite", "Xenotime", "Zeolite", "Zircon", "Zoisite"]
+        },
+        "standards": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "isSearchable": false,
+            "enum": ["Other", "Austin Chalk", "Berea Sandstone", "Carrara Marble", "Indiana Limestone", "Frederick Maryland Diabase", "Heavitree Quartzite", "Solnhofen Limestone", "Simpson Quartzite", "Black Hills Quartzite", "Sioux Quartzite", "Cheshire Quartzite", "Arkansas Novaculite", "Westerley Granite"]
+        },
+        "commodities": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "isSearchable": false,
+            "enum": ["Other", "agate", "aggregate", "alumina", "aluminium", "aluminosilicate", "alunite", "amazonite", "amber", "amethyst", "andalusite", "anhydrite", "anthophyllite", "anthracite", "antimony", "apatite", "apatite - gemstone", "aquamarine", "arsenic", "asbestos", "asbestos - amphibole", "asbestos - serpentine", "asphalt", "barium", "baryte", "basalt", "base - metal", "bauxite", "bentonite", "beryl", "beryllium", "bismuth", "black - coal", "borate", "boron", "brick - clay", "bromine", "brown - coal", "cadmium", "calcite", "carbonaceous - material", "carnallite", "carnelian", "cassiterite - gemstone", "cerium", "cesium", "chalcedony", "chemical - compound - product", "chemical - oxide - product", "chert", "chlorite", "chrome", "chromite", "chromium", "chrysoberyl", "chrysoprase", "chrysotile", "citrine", "clay", "coal", "coal - bed - methane", "cobalt", "copper", "corundum", "corundum - gemstone", "crocidolite", "crushed - rock", "cryolite", "diamond", "diamond - gemstone", "diatomite", "dimension - stone", "diopside - enstatite", "dioptase", "direct - shipping - ore", "direct - use - commodity", "dumortierite", "dysprosium", "emerald", "epsomite", "erbium", "euclase", "europium", "evaporite", "feldspar", "feldspar - gemstone", "ferrous - metal", "fluorine", "fluorite", "foundry - sand", "frac - sand", "fullers - earth", "gadolinium", "gallium", "garnet", "garnet - gemstone", "gaseous - hydrocarbons", "gas - hydrate", "gemstones", "germanium", "glauconite", "gold", "granite", "graphite", "greenstone", "gypsum", "hafnium", "halloysite", "heavy - rare - earth - oxide", "heliodor", "hematite", "hematite - gemstone", "hematite - ore", "holmium", "hree", "ilmenite", "indium", "industrial - material", "industrial - mineral", "industrial - rock", "iodine", "iolite", "iridium", "iron", "iron - ore", "iron - oxide", "jade", "jarosite", "kaolin", "kornerupine", "kyanite", "kyanite - gemstone", "lanthanum", "laterite", "lazulite", "lead", "leucoxene", "light - rare - earth - oxide", "lime", "limestone", "liquid - hydrocarbons", "lithium", "lithium - oxide", "lree", "lutetium", "magnesia", "magnesite", "magnesium", "magnetite", "magnetite - ore", "malachite", "manganese", "manganese - ore", "marble", "mercury", "metal", "metalloid", "mica", "miscellaneous - dimension - stones", "molybdenite", "molybdenum", "monazite", "moonstone", "morganite", "moss - agate", "natural - secondary - aggregate", "neodymium", "nepheline - syenite", "nickel", "niobium", "niobium - pentoxide", "nitrate", "non - metal", "obsidian", "ochre", "oil", "oil - shale", "olivine", "olivine - gemstone", "onyx", "opal", "organic - material", "osmium", "palladium", "palygorskite", "peat", "perlite", "phenakite", "phosphate - rock", "phosphorous", "phosphorous - pentoxide", "platinum", "platinum - group", "potash", "potassium", "pozzolan", "praseodymium", "precious - metal", "prehnite", "primary - aggregate", "produced - commodity", "promethium", "pumice", "pyrite", "pyrophyllite", "quartz", "quartz - gemstone", "radium", "rare - earth - element", "rare - earth - oxide", "recycled - aggregate", "reservoir - gas", "rhenium", "rhodium", "rhodonite", "riprap", "rose - quartz", "rubidium", "ruby", "ruthenium", "rutile", "salt", "samarium", "sand", "sand - and - gravel", "sandstone", "saponite", "sapphire", "sapphirine", "scandium", "scapolite", "selenium", "sepiolite", "sericite", "serpentine", "shell - grit", "silica", "silica - gemstone", "silicon", "sillimanite", "silver", "sinhalite", "slate", "smokey - quartz", "soda - ash", "sodalite", "spectrolite", "spinel", "spinel - gemstone", "spodumene", "spongolite", "staurolite", "strontianite", "strontium", "sulphur", "sylvite", "talc", "tantalum", "tantalum - pentoxide", "tanzanite", "tar - sand", "tellurium", "terbium", "thallium", "thenardite", "thorium", "thulium", "tin", "titanium", "topaz", "tourmaline", "tremolite - actinolite", "tsavorite", "tungsten", "turquoise", "uranium", "uranium - oxide", "vanadium", "vanadium - pentoxide", "variscite", "vermiculite", "vesuvianite", "white - firing - clay", "wollastonite", "xenotime - gemstone", "ytterbium", "yttrium", "yttrium - oxide", "zeolite", "zinc", "zircon", "zircon - gemstone", "zirconia", "zirconium"]
+        },
+        "soil": {
+            "type": "string",
+            "fieldType": "selectlist",
+            "displayType": "select",
+            "isSearchable": false,
+            "enum": ["Other", "Bentonite"]
+        },
+        "documents": {
+            "type": "array",
+            "title": "Documents",
+            "format": "tabs",
+            "options": {
+                "collapsed": true,
+                "disable_collapse": false,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "grid_columns": 12,
+                "grid_break": true
+            },
+            "items": {
+                "title": "Doc",
+                "headerTemplate": "{{self.type}}-{{self.id}}",
+                "options": {
+                    "collapsed": false,
+                    "disable_collapse": true,
+                    "disable_edit_json": true,
+                    "disable_properties": true,
+                    "compact": true,
+                    "grid_columns": 12,
+                    "grid_break": true
+                },
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "title": "Type",
+                        "enum": [
+                            "Manual", "Diagram", "Picture", "Video", "Data", "Software", "ASTM", "Publication", "Other"
+                        ],
+                        "propertyOrder": 0,
+                        "options": {
+                            "grid_break": true,
+                            "grid_columns": 3
+                        }
+                    },
+                    "format": {
+                        "type": "string",
+                        "title": "Format",
+                        "format": "choice",
+                        "fieldType": "text",
+                        "isSearchable": true,
+                        "enum": [
+                            "jpg", "png", "txt", "csv", "zip", "rar", "pdf", "docx"
+                        ],
+                        "propertyOrder": 1,
+                        "options": {
+                            "grid_columns": 3
+                        }
+                    },
+                    "id": {
+                        "type": "string",
+                        "title": "Doc ID",
+                        "propertyOrder": 2,
+                        "options": {
+                            "grid_columns": 3
+                        }
+                    },
+                    "path": {
+                        "title": "File Path",
+                        "type": "string",
+                        "propertyOrder": 3,
+                        "format": "url",
+                        "options": {
+                            "grid_columns": 5
+                        },
+                        "links": [{
+                                "href": "{{self}}",
+                                "rel": "Document"
+                            }
+                        ]
+                    },
+                    "description": {
+                        "type": "string",
+                        "title": "Description",
+                        "format": "text",
+                        "options": {
+                            "grid_columns": 6
+                        },
+                        "fieldType": "text",
+                        "isSearchable": true,
+                        "propertyOrder": 4
+                    },
+                    "upload": {
+                        "type": "string",
+                        "title": "Upload",
+                        "description": "Manuals/Drawings, etc",
+                        "media": {
+                            "type": "text/html",
+                            "binaryEncoding": "base64"
+                        },
+                        "fieldType": "text",
+                        "propertyOrder": 5,
+                        "options": {
+                            "hidden": true,
+							"grid_columns": 5
+                        }
+                    },
+                    "astm": {
+                        "type": "string",
+                        "title": "ASTM Identification or Publication",
+                        "enum": [
+                            "Standard Test Method for Triaxial Compressive Strength of Undrained Rock Core Specimens without Pore Pressure Measurements, 1993, ASTM D 2664-86",
+                            "Standard Test Method for Elastic Moduli of Intact Rock Core Specimens in Uniaxial Compression, 1993, ASTM D 3148-93",
+                            "Suggested Methods for Determining the Strength of Rock Materials in Triaxial Compression, In Rock Characterization Testing and Monitoring, 1981, – ISRM Suggested Methods, 123-127",
+                            "Standard Test Method for Consolidated Drained Triaxial Compression Test for Soils, 2020, ASTM D7181-20",
+                            "Standard Test Method for Unconsolidated-Undrained Triaxial Compression Test on Cohesive Soils, 2016, ASTM D2850-15",
+                            "ASTM Standard C33, 2003, 'Specification for Concrete Aggregates, ASTM International, West Conshohocken, PA, 2003, DOI: 10.1520/C0033-03",
+                            "Standard Test Methods for Creep of Rock Core Under Constant Stress and Temperature, 2016, ASTM D7070-16"
+                        ],
+                        "options": {
+                            "grid_columns": 12,
+                            "dependencies": {
+                                "type": ["ASTM"]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "phase": {
+            "title": "Phase",
+            "headerTemplate": "{{self.component}}",
+            "type": "object",
+            "multiple": true,
+            "required": [],
+            "properties": {
+                "component": {
+                    "type": "string",
+                    "title": "Component",
+                    "propertyOrder": 0
+                },
+                "fraction": {
+                    "type": "number",
+                    "title": "Fraction",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "propertyOrder": 1
+                },
+                "activity": {
+                    "type": "number",
+                    "title": "Activity",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "propertyOrder": 2
+                },
+                "fugacity": {
+                    "type": "string",
+                    "title": "Fugacity",
+                    "propertyOrder": 3
+                },
+                "unit": {
+                    "type": "string",
+                    "title": "Unit",
+                    "enum": [
+                        "Vol%", "Mol%", "Wt%", "MPa"
+                    ],
+                    "propertyOrder": 4
+                }
+            }
+        },
+        "solute": {
+            "title": "Solute",
+            "headerTemplate": "{{self.component}}",
+            "type": "object",
+            "multiple": true,
+            "required": [],
+            "properties": {
+                "component": {
+                    "type": "string",
+                    "title": "Component",
+                    "propertyOrder": 0,
+                    "options": {
+                        "grid_columns": 3
+                    },
+                    "enum": ["pH", "pOH", "Na+", "K+", "Ca++", "Mg++", "Sr++", "HCO3-", "TOC", "TIC", "CO2(gas)", "CO2(sol)", "Resitivity", "Temperature"]
+                },
+                "value": {
+                    "type": "string",
+                    "title": "Value",
+                    "propertyOrder": 1,
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "error": {
+                    "type": "string",
+                    "title": "Error",
+                    "propertyOrder": 2,
+                    "options": {
+                        "grid_columns": 2
+                    }
+                },
+                "unit": {
+                    "type": "string",
+                    "title": "Unit",
+                    "enum": ["Vol%", "Mol%", "Wt%", "Mol/L", "mMol/L", "S/Mol", "log [C]", "deg C"],
+                    "propertyOrder": 3,
+                    "options": {
+                        "grid_columns": 3
+                    }
+                }
+            }
+        },
+        "material": {
+            "type": "object",
+            "title": "Material Type",
+            "format": "grid-strict",
+            "options": {
+                "grid_columns": 12,
+                "keep_oneof_values": false
+            },
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "options": {
+                        "hidden": true
+                    }
+                }
+            },
+            "oneOf": [{
+                    "type": "object",
+                    "title": "Glass",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Glass"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Name",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Ice",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "ice"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Name",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Ceramic",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "ceramic"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Name",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Plastic",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "plastic"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Name",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Metal",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "metal"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Name",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Soil",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "soil"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Soil Type",
+                            "$ref": "#/definitions/soil",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Mineral",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "mineral"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Mineral Name",
+                            "$ref": "#/definitions/minerals",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Igneous Rock",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "igneous"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Igneous Rock",
+                            "$ref": "#/definitions/igneous_lithology",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Sedimentary Rock",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "sedimentary"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Sedimentary Rock",
+                            "$ref": "#/definitions/sedimentary"
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Metamorphic Rock",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "metamorphic"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Metamorphic Rock",
+                            "$ref": "#/definitions/metam_lithology",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Epos Lithologies",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "epos"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Epos Lithology",
+                            "$ref": "#/definitions/epos_lithology",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Standards",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "standard"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Lab Standard",
+                            "$ref": "#/definitions/standards",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "type": "object",
+                    "title": "Commodity",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "commodity"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "name": {
+                            "title": "Commodity Name",
+                            "$ref": "#/definitions/commodities",
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "provenance": {
+            "title": "Provenance",
+            "type": "object",
+            "grid-strict": true,
+            "options": {
+                "collapsed": true,
+                "disable_collapse": false,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "grid_columns": 12
+            },
+            "properties": {
+                "formation": {
+                    "type": "string",
+                    "title": "Formation Name"
+                },
+                "member": {
+                    "type": "string",
+                    "title": "Member Name"
+                },
+                "submember": {
+                    "type": "string",
+                    "title": "Sub Member Name",
+                    "options": {
+                        "grid_break": true
+                    }
+                },
+                "source": {
+                    "type": "string",
+                    "title": "Source",
+                    "enum": ["Surface", "Quarry", "Well"],
+                    "options": {
+                        "grid_columns": 3
+                    }
+                },
+                "well_id": {
+                    "type": "string",
+                    "title": "Well ID",
+                    "options": {
+                        "grid_columns": 4,
+                        "dependencies": {
+                            "source": "Well"
+                        }
+                    }
+                },
+                "well_depth": {
+                    "type": "number",
+                    "title": "Depth (Log)",
+                    "description": "[m]",
+                    "options": {
+                        "grid_columns": 4,
+                        "dependencies": {
+                            "source": "Well"
+                        }
+                    }
+                },
+                "location": {
+                    "$ref": "#/definitions/location",
+                    "options": {
+                        "collapsed": true,
+                        "disable_collapse": false,
+                        "disable_edit_json": true,
+                        "disable_properties": true
+                    }
+                }
+            }
+        },
+        "header": {
+            "type": "object",
+            "title": "Header",
+            "propertyOrder": 0,
+            "options": {
+                "disable_collapse": true,
+                "disable_edit_json": true,
+                "disable_properties": true,
+                "keep_oneof_values": false
+            },
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "options": {
+                        "hidden": true
+                    }
+                }
+            },
+            "oneOf": [{
+                    "title": "Time",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Time"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Absolute", "Relative"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Total", "Differential"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "format": "choice",
+                            "propertyOrder": 3,
+                            "enum": ["sec", "min", "hour", "day", "ysec", "msec", "%", "UTC", "dd-mm-yyyy", "mm/dd/yy", "hh-mm-ss"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Temperature",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Temperature"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Room", "Sample", "Furnace", "Fluid", "Pore", "Vessel"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Top", "Bottom", "Internal", "External", "Average"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 1,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["deg C", "deg K", "deg F"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Pressure",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Pressure"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Barometric", "Confining", "Pore", "Effective", "Differential"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Vessel", "Intensifier", "Upstream", "Downstream"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 1,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["bar", "kPa", "MPa", "GPa", "PSI"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Strain",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Strain"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "description": "Required Specifier",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Total", "Axial", "Radial", "Shear", "Average", "Area", "Volumetric", "σ1", "σ2", "σ3"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Sample", "Internal", "External", "Rate"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "description": "required",
+                            "format": "choice",
+                            "propertyOrder": 3,
+                            "enum": ["%", "mStrain", "Strain", "1/sec"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Displacement",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Displacement"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "description": "Required Specifier",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Total", "Axial", "Radial", "Shear", "Average", "Area", "Volumetric", "σ1", "σ2", "σ3"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Sample", "Internal", "External", "Rate", "Pore Pressure Intensifier", "Confining Pressure Intensifier", "Pore Volume", "Confining Volume"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "description": "required",
+                            "format": "choice",
+                            "propertyOrder": 3,
+                            "enum": ["%", "μm", "mm", "m", "mm/s"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Stress",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Stress"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "description": "Required Specifier",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Axial", "Radial", "Shear", "Normal", "Differential", "Average", "σ1", "σ2", "σ3", "Confining"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Sample", "Internal", "External"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "description": "required",
+                            "format": "choice",
+                            "propertyOrder": 3,
+                            "enum": ["Pa", "KPa", "MPa", "GPa"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Load",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Load"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "description": "Required Specifier",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Axial", "Radial", "Shear", "Normal", "Differential", "Average", "σ1", "σ2", "σ3", "Confining"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Sample", "Internal", "External"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "description": "required",
+                            "format": "choice",
+                            "propertyOrder": 3,
+                            "enum": ["N", "KN"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Electrical",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Electrical"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "description": "Required Specifier",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Conductivity", "Resistivity", "Capacity", "Spontaneous Potential", "AC Voltage", "DC Voltage", "Current", "Induction"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["Sample", "Pore Fluid", "Total", "Heating", "Cooling"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "description": "required",
+                            "format": "choice",
+                            "propertyOrder": 3,
+                            "enum": ["μVolt", "mVolt", "Volt", "A", "mA", "S", "S/m", "F", "Ω", "Ωm"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Chemistry",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "Chemistry"
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "description": "Required Specifier",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Pore Fluid", "Fluid"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "format": "choice",
+                            "propertyOrder": 1,
+                            "enum": ["pH", "pOH", "Na+", "K+", "Ca++", "Mg++", "Sr++", "HCO3-", "TOC", "TIC", "CO2(gas)", "CO2(sol)"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "description": "required",
+                            "format": "choice",
+                            "propertyOrder": 3,
+                            "enum": ["mol/L", "mMol/L", "ppm", "cc"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }, {
+                    "title": "Other",
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                ""
+                            ],
+                            "options": {
+                                "hidden": true
+                            }
+                        },
+                        "spec_a": {
+                            "type": "string",
+                            "title": "Specifier A",
+                            "description": "Required Specifier",
+                            "format": "choice",
+                            "propertyOrder": 0,
+                            "enum": ["Acoustic Emissions", "Acoustic Velocity", "Amplitude", "Anisotropy", "Area", "Attenuation", "Bulk Modulus", "Capacitance", "Centrifugal Force", "Chemical Potential", "Coldness", "Concentration", "Confining Pressure", "Current Density", "Density", "Downstream Pore Pressure", "Dynamic Viscosity", "Elasticity", "Elastic Wave Velocity", "Electric charge", "Electric Charge Density", "Electrical Conductivity", "Electric Current", "Electrical Resistance", "Electrical Resistivity", "Energy", "Entropy", "Force", "Fracture Toughness", "Frequency", "Friction Coefficient", "Heat", "Heat Capacity", "Hydraulic Conductivity", "Impedance", "Impulse", "Inductance", "Intensity", "Irradiance", "Lame Parameter", "Length", "Linear Density", "Luminance", "Magnetic Field Strength", "Magnetic Flux", "Mass", "Mass Concentration", "Mass Fraction", "Molar Concentration", "Molar Energy", "Molar Entropy", "Molar Heat Capacity", "Moment of Force", "Moment of Inertia", "Momentum", "Magnetic Permittivity", "Permeability", "Plane Angle", "Poisson's Ratio", "Pore Pressure", "P-Wave Modulus", "Radiance", "Radioactive Dose", "Reaction Rate", "Refractive Index", "Roughness", "Shear Modulus", "Solid Angle", "Specific Energy", "Specific Entropy", "Specific Heat Capacity", "Specific Volume", "Spontaneous Potential", "Strain", "Streaming Potential", "Strength", "Stress", "Surface Charge Density", "Surface Density", "Surface Tension", "Temperature", "Temperature Gradient", "Thermal Conductance", "Thermal Conductivity", "Thermal Resistance", "Thermal Resistivity", "Time", "Torque", "Upstream Pore Pressure", "Velocity", "Volume", "Volumetric Flow Rate", "Wavelength", "Wavenumber", "Wavevector", "Weight", "Work", "Yield Strength", "Young's Modulus"],
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_b": {
+                            "type": "string",
+                            "title": "Specifier B",
+                            "propertyOrder": 1,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "spec_c": {
+                            "type": "string",
+                            "title": "Other Specifier",
+                            "propertyOrder": 2,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        },
+                        "unit": {
+                            "type": "string",
+                            "title": "Unit",
+                            "propertyOrder": 3,
+                            "options": {
+                                "grid_columns": 3
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "features": {
+            "type": "array",
+            "title": "Features",
+            "uniqueItems": true,
+            "format": "checkbox",
+            "items": {
+                "type": "string",
+                "enum": ["Loading", "Unloading", "Heating", "Cooling", "High Temperature", "Ultra-High Temperature", "Low Temperature", "Sub-Zero Temperature", "High Pressure", "Ultra-High Pressure", "Hydrostatic Tests", "HIP", "Synthesis", "Deposition/Evaporation", "Mineral Reactions", "Hydrothermal Reactions", "Elasticity", "Local Axial Strain", "Local Radial Strain", "Elastic Moduli", "Yield Strength", "Failure Strength", "Strength", "Extension", "Creep", "Friction", "Frictional Sliding", "Slide Hold Slide", "Stepping", "Pure Shear", "Simple Shear", "Rotary Shear", "Torsion", "Viscosity", "Indentation", "Hardness", "Dynamic Tests", "Hydraulic Fracturing", "Hydrothermal Fracturing", "Shockwave", "Reactive Flow", "Pore Fluid Control", "Pore Fluid Chemistry", "Pore Volume Compaction", "Storage Capacity", "Permeability", "Steady-State Permeability", "Transient Permeability", "Hydraulic Conductivity", "Drained/Undrained Pore Fluid", "Uniaxial Stress/Strain", "Biaxial Stress/Strain", "Triaxial Stress/Strain", "Differential Stress", "True Triaxial", "Resistivity", "Electrical Resistivity", "Electrical Capacitance", "Streaming Potential", "Acoustic Velocity", "Acoustic Events", "P-Wave Velocity", "S-Wave Velocity", "Source Location", "Tomography", "In-Situ X-Ray", "Infrared", "Raman", "Visual", "Other"]
+            },
+            "default": [
+                "Loading",
+                "Unloading"],
+            "options": {
+                "collapsed": true,
+                "hidden": false,
+                "grid_columns": 12
+            }
+        }
+    }
+}
